@@ -18,7 +18,7 @@ jobs:
           bun-version: 'latest'
 
       - name: install dependencies
-        run: bun install
+        run: cd source_code && bun install
 
       - name: build
         run: cd source_code && bun run build && cp -r ${{env.dist_all}} .. && rm -rf ${{env.dist}}
