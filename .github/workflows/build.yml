@@ -1,0 +1,31 @@
+on:
+  push:
+    branches:
+      - main
+
+env:
+  dist: ./dist
+  dist_all: ./dist/henrisedjame.dev/browser/*
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: setup-bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 'latest'
+
+      - name: install dependencies
+        run: bun install
+
+      - name: build
+        run: cd source_code && bun run build && cp -r ${{env.dist_all}} .. && rm -rf ${{env.dist}}
+
+      - name: commit changes
+        uses: actions-js/push@master
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}
+          message: 'chore: build to ${{github.ref_name}}'
+          branch: main
