@@ -1,0 +1,12 @@
+
+.layout__content {
+  background: rgba(110, 109, 109, 0.06);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+
+  border-style: solid;
+  border-width: 0 var(--line-thickness);
+  border-color: var(--line-color);
+}

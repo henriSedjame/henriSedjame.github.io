@@ -1,0 +1,33 @@
+.menu-label {
+  font-size: .45rem;
+  font-weight: 600;
+  color: var(--white);
+
+  &.close {
+    font-size: .42rem;
+    color: var(--grey);
+    margin-top: 1px;
+  }
+}
+
+.bar {
+  width: 26px;
+  height: 2px;
+  background-color: var(--white);
+
+  &.first {
+    margin-bottom: 3px;
+  }
+}
+
+.menu-box {
+  background-color: var(--black);
+  box-shadow: 0 0 10px rgba(76, 76, 76, 0.5);
+  max-width: 200px;
+  min-width: 150px;
+}
+
+.lang-selector-container {
+  background-color: var(--black);
+  border-top: var(--line-thickness) solid var(--line-color);
+}

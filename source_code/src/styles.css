@@ -1,3 +1,128 @@
 /* You can add global styles to this file, and also import other style files */
 
+
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Orbitron:wght@400..900&display=swap');
+
 @import "tailwindcss";
+@theme {
+  --breakpoint-sm: 768px;
+}
+
+:root {
+  --background-color: #000000;
+
+  --white: #ffffff;
+  --black: #101010;
+  --grey: #8f8f8f;
+  --yellow: #ffea00;
+
+  --line-thickness: 0.005rem;
+  --line-color: rgba(255, 255, 255, 0.3);
+
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+
+  /* TEXT */
+  font-family: Lato, sans-serif;
+  font-weight: 100;
+  color:var(--grey);
+  letter-spacing: 1px;
+
+  /* SCROLL */
+  /* width */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--grey);
+    border-radius: 5px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--grey);
+  }
+
+}
+
+.text-white {
+  color: var(--white) ;
+}
+
+.title {
+  font-weight: 400;
+  font-family: 'Anton', sans-serif;
+}
+
+.divider {
+  width: 100%;
+  height: var(--line-thickness);
+  background-color: var(--line-color);
+}
+
+.vertical-divider {
+  width: var(--line-thickness);
+  height: fit-content;
+  background-color: var(--line-color);
+}
+
+.bordered-right {
+  border-right: var(--line-thickness) solid var(--line-color);
+}
+
+.bordered-bottom {
+  border-bottom: var(--line-thickness) solid var(--line-color);
+}
+
+.yellow-bordered {
+  border: var(--line-thickness) solid var(--line-color);
+}
+
+.grey-shadowed {
+  box-shadow: 0 1px 3px rgb(101, 101, 101);
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .responsive-width {
+    width: 100vw;
+  }
+
+  .hidden-on-mobile {
+    display: none;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .responsive-width {
+    width: 100vw;
+  }
+
+  .hidden-on-tablet {
+    display: none;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+  .responsive-width {
+    width: 80%;
+  }
+
+  .hidden-on-desktop {
+    display: none;
+  }
+
+}

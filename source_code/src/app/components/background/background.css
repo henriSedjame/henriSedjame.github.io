@@ -1,0 +1,30 @@
+.background {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+
+.background__content {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  background-image: radial-gradient(
+    circle farthest-side at var(--bg-light-x, 100px) var(--bg-light-y, 100px),
+    rgba(170, 170, 170, 0.25) 0%,
+    transparent 100%
+  );
+}
+
+.background__image {
+  height: 100vh;
+
+  img {
+    opacity: 0.1;
+    height: 100vh;
+    filter: grayscale(100%);
+    mix-blend-mode: multiply;
+  }
+}

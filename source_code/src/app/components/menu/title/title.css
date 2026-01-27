@@ -1,0 +1,13 @@
+
+.name {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+.point {
+  width: 4px;
+  height: 4px;
+  background-color: var(--yellow);
+}

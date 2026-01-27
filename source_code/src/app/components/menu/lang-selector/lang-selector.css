@@ -1,0 +1,32 @@
+.lang {
+  font-size: .7rem;
+  font-weight: 400;
+  color: var(--white);
+}
+
+.flag {
+  font-size: 1.2rem;
+  cursor: default;
+}
+
+.inactive {
+
+  opacity: 0.4;
+  cursor: pointer;
+  filter: saturate(0);
+
+  .lang {
+    opacity: 0.6;
+  }
+
+  &:hover {
+    filter: saturate(1);
+  }
+}
+
+.flag-divider {
+  width: var(--line-thickness);
+  height: 20px;
+  background-color: var(--line-color);
+  margin: 0 8px 0 8px;
+}

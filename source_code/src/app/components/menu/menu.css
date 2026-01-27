@@ -1,0 +1,14 @@
+.menu {
+  background: rgba(16, 16, 16, 0.8);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(150px);
+  -webkit-backdrop-filter: blur(150px);
+}
+
+.m {
+  display: flex;
+  flex: 4;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}

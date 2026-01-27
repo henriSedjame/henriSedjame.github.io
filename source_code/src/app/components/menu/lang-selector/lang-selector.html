@@ -1,0 +1,27 @@
+<div class="px-3  flex flex-col space-y-0 items-center justify-center">
+  <div class="flex space-x-1 items-center justify-center" [ngClass]="isFrEnabled() ? '' : 'inactive'" (click)="switchLanguage('fr')">
+    <span class="flag" >🇫🇷</span>
+    <span class="lang">FR</span>
+  </div>
+
+  <div class="divider"> </div>
+
+  <div class="flex space-x-1 items-center justify-center" [ngClass]="isEnEnabled() ? '' : 'inactive'" (click)="switchLanguage('en')" >
+    󠁮<span class="flag"  > 🇬🇧</span>󠁿
+    <span class="lang">EN</span>
+  </div>
+</div>
+
+<!--<div class="px-3 bg-(--black) rounded-lg grey-shadowed flex flex-row space-x-1 items-center justify-center">
+  <div class="flex space-x-1 items-center justify-center" [ngClass]="isFrEnabled() ? '' : 'inactive'" (click)="switchLanguage('fr')">
+    <span class="flag" >🇫🇷</span>
+    <span class="lang">FR</span>
+  </div>
+
+  <div class="flag-divider"> </div>
+
+  <div class="flex space-x-1 items-center justify-center" [ngClass]="isEnEnabled() ? '' : 'inactive'" (click)="switchLanguage('en')" >
+    󠁮<span class="flag"  > 🇬🇧</span>󠁿
+    <span class="lang">EN</span>
+  </div>
+</div>-->

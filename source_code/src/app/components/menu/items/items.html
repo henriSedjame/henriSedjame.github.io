@@ -1,0 +1,13 @@
+<div
+  class="flex flex-row not-sm:flex-col space-x-8 not-sm:space-y-4 items-center not-sm:items-start justify-start ml-4 ">
+
+  @for (item of menu_items; track $index) {
+    <span
+      class="label"
+      [ngClass]="currentItem() === item.label ? 'active' : ''"
+      (click)="setCurrentItem(item)"
+    >
+      {{item.label}}
+    </span>
+  }
+</div>

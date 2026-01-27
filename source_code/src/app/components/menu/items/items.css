@@ -1,0 +1,19 @@
+.label {
+  font-size: .8rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  cursor: pointer;
+  opacity: .7;
+
+  &:hover {
+    color: var(--white);
+    font-weight: 400;
+    opacity: .9;
+  }
+
+  &.active {
+    color: var(--white);
+    font-weight: 600;
+    opacity: 1;
+  }
+}
