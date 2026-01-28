@@ -1,13 +1,19 @@
 <div
-  class="flex flex-row not-sm:flex-col space-x-8 not-sm:space-y-4 items-center not-sm:items-start justify-start ml-4 ">
+  class="relative flex flex-row not-sm:flex-col not-sm:space-y-4 items-center not-sm:items-start justify-start ml-4 ">
 
   @for (item of menu_items; track $index) {
-    <span
-      class="label"
+    <div
+      class="label z-2 px-3 py-1"
       [ngClass]="currentItem() === item.label ? 'active' : ''"
       (click)="setCurrentItem(item)"
     >
-      {{item.label}}
-    </span>
+      {{`menu.${item.label}` | translate }}
+
+    </div>
   }
+
+  <div class="absolute top-0 w-0 h-full bg-(--grey) opacity-20 rounded-lg z-1 duration-200 idden-on-mobile"
+       [ngClass]="item_hover_class()"
+  ></div>
+
 </div>

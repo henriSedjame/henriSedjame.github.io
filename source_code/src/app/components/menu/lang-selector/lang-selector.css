@@ -1,26 +1,26 @@
 .lang {
-  font-size: .7rem;
+  font-size: .8rem;
   font-weight: 400;
   color: var(--white);
+  user-select: none;
 }
 
 .flag {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   cursor: default;
+  user-select: none;
 }
 
 .inactive {
-
-  opacity: 0.4;
   cursor: pointer;
-  filter: saturate(0);
-
-  .lang {
-    opacity: 0.6;
-  }
+  filter: saturate(0.5);
+  scale: .8;
+  opacity: .7;
 
   &:hover {
+    opacity: .9;
     filter: saturate(1);
+    scale: 1;
   }
 }
 

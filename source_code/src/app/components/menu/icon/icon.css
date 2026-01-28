@@ -4,12 +4,17 @@
   color: var(--white);
 
   &.close {
-    font-size: .42rem;
+    font-size: .43rem;
+    margin-top: 3px;
     color: var(--grey);
-    margin-top: 1px;
   }
 }
 
+.x {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--grey);
+}
 .bar {
   width: 26px;
   height: 2px;

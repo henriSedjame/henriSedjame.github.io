@@ -2,11 +2,8 @@ import {signalStore, withHooks, withMethods, withState} from '@ngrx/signals';
 import {updateState, withDevtools} from '@angular-architects/ngrx-toolkit';
 import {TranslateService} from '@ngx-translate/core';
 import {inject} from '@angular/core';
-import {MENU_ITEMS, MenuItem} from '@App/models/MenuItems';
+import {MENU_ITEMS, MenuItem, Language} from '@App/models';
 import {Router} from '@angular/router';
-
-export type Language = 'en' | 'fr';
-
 
 export type AppState = {
   currentLanguage: Language;
@@ -19,7 +16,7 @@ export type AppState = {
 export const initialAppState: AppState = {
   currentLanguage: 'en',
   menu: {
-    opened: true,
+    opened: false,
     currentItem: MENU_ITEMS[0],
   }
 }

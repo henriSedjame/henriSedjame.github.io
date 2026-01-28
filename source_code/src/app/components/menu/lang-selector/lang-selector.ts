@@ -1,6 +1,7 @@
 import {Component, computed, inject} from '@angular/core';
-import {AppStore, Language} from '@App/app.store';
+import {AppStore} from '@App/app.store';
 import {NgClass} from '@angular/common';
+import {Language} from '@App/models';
 
 @Component({
   selector: 'menu-lang-selector',

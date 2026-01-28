@@ -65,6 +65,13 @@ html, body {
   font-family: 'Anton', sans-serif;
 }
 
+.subtitle {
+  font-weight: 200;
+  font-family: 'Cal Sans', sans-serif;
+}
+
+
+
 .divider {
   width: 100%;
   height: var(--line-thickness);
@@ -81,6 +88,10 @@ html, body {
   border-right: var(--line-thickness) solid var(--line-color);
 }
 
+.bordered-left {
+  border-left: var(--line-thickness) solid var(--line-color);
+}
+
 .bordered-bottom {
   border-bottom: var(--line-thickness) solid var(--line-color);
 }
@@ -93,6 +104,10 @@ html, body {
   box-shadow: 0 1px 3px rgb(101, 101, 101);
 }
 
+.bg {
+  z-index: -1;
+}
+
 /* Mobile */
 @media (max-width: 767px) {
   .responsive-width {
@@ -101,6 +116,10 @@ html, body {
 
   .hidden-on-mobile {
     display: none;
+  }
+
+  .description {
+    font-size: 1rem;
   }
 }
 
@@ -112,6 +131,10 @@ html, body {
 
   .hidden-on-tablet {
     display: none;
+  }
+
+  .description {
+    font-size: 1.05rem;
   }
 }
 
@@ -125,4 +148,16 @@ html, body {
     display: none;
   }
 
+  .description {
+    font-size: 1.1rem;
+
+  }
+
 }
+
+/**
+
+menu : z-2
+
+
+*/

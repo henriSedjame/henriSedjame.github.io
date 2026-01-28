@@ -1,5 +1,13 @@
 {
+  "menu": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "blog": "Blog"
+  },
   "home": {
-    "hi": "Hi, I'm Henri SEDJAME"
+    "title": "Hi, I'm Henri SEDJAME",
+    "subtitle": "A passionate fullstack developer",
+    "description": "Self-taught developer, I design and implement applications using multiple technologies across the entire application stack. My work focuses on building functional user interfaces, implementing robust business logic, and developing reliable APIs. I also develop open-source libraries to contribute, in my own way, to the software development ecosystem. With attention to code structure, performance, and maintainability, I aim to deliver clear, scalable solutions suited to real-world use cases."
   }
 }

@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LangSelector } from './lang-selector';
+import {provideTranslateService} from '@ngx-translate/core';
 
 describe('LangSelector', () => {
   let component: LangSelector;
@@ -8,7 +9,10 @@ describe('LangSelector', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LangSelector]
+      imports: [LangSelector],
+      providers: [
+        provideTranslateService()
+      ]
     })
     .compileComponents();
 

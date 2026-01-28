@@ -1,3 +1,5 @@
+
+
 .label {
   font-size: .8rem;
   font-weight: 400;
@@ -17,3 +19,46 @@
     opacity: 1;
   }
 }
+
+
+.label:nth-child(1):hover~.item-hover-en {
+  left: 0;
+  width: 65px;
+}
+
+.label:nth-child(2):hover~.item-hover-en {
+  left: 68px;
+  width: 70px;
+}
+
+.label:nth-child(3):hover~.item-hover-en {
+  left: 141px;
+  width: 93px;
+}
+
+.label:nth-child(4):hover~.item-hover-en {
+  left: 235px;
+  width: 60px;
+}
+
+
+.label:nth-child(1):hover~.item-hover-fr {
+  left: 0;
+  width: 81px;
+}
+
+.label:nth-child(2):hover~.item-hover-fr {
+  left: 84px;
+  width: 92px;
+}
+
+.label:nth-child(3):hover~.item-hover-fr {
+  left: 178px;
+  width: 82px;
+}
+
+.label:nth-child(4):hover~.item-hover-fr {
+  left: 263px;
+  width: 60px;
+}
+
