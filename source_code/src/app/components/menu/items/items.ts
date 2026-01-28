@@ -25,6 +25,7 @@ export class Items {
 
   setCurrentItem(item: MenuItem) {
     this.appStore.setCurrentMenuItem(item);
+    if (this.appStore.menu().opened) this.appStore.toggleMenuOpened();
   }
 
 }

@@ -20,5 +20,6 @@ export class LangSelector {
 
   switchLanguage(lang: Language) {
     this.appStore.setLanguage(lang);
+    if (this.appStore.menu().opened) this.appStore.toggleMenuOpened();
   }
 }
