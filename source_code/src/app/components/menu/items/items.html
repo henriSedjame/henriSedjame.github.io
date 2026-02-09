@@ -3,16 +3,15 @@
 
   @for (item of menu_items; track $index) {
     <div
-      class="label z-2 px-3 py-1"
+      class="label z-2 py-1 w-25 text-center"
       [ngClass]="currentItem() === item.label ? 'active' : ''"
       (click)="setCurrentItem(item)"
     >
-      {{`menu.${item.label}` | translate }}
-
+      <translated [value]="`menu.${item.label}`"/>
     </div>
   }
 
-  <div class="absolute top-0 w-0 h-full bg-(--grey) opacity-20 rounded-lg z-1 duration-200 hidden-on-mobile"
+  <div class="absolute w-25 bg-(--grey) opacity-20 rounded-lg z-1 duration-100 hidden-on-mobile"
        [ngClass]="item_hover_class()"
   ></div>
 

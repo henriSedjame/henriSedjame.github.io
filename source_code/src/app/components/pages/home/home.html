@@ -1,17 +1,7 @@
-<div class="w-full flex flex-col content-center p-25 not-sm:p-0 not-sm:pt-15 not-sm:items-center">
+<div class="w-full flex flex-col py-25 content-center  not-sm:p-0 not-sm:pt-15 not-sm:items-center">
 
-  <div class="flex flex-row items-baseline space-x-3">
-    <div class="title select-none lg:text-6xl md:text-6xl not-sm:text-4xl text-white font-bold"> {{ 'home.title' | translate }}</div>
-    <div class="dot"></div>
-  </div>
-
-  <div class="subtitle  select-none opacity-50 mt-4 not-sm:text-left lg:text-3xl md:text-3xl not-sm:text-xl">
-    {{'home.subtitle' | translate}}
-  </div>
-
-
-  <div class="description select-none mt-10 text-balance not-sm:text-justify  not-sm:px-12" >
-    {{ 'home.description' | translate }}
-  </div>
+  <home-intro />
+  <space [height]="150"/>
+  <home-stacks />
 
 </div>

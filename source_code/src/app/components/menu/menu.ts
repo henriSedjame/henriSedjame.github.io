@@ -1,7 +1,6 @@
-import {Component, inject} from '@angular/core';
+import {Component} from '@angular/core';
 import {Title} from './title';
 import {Items} from './items';
-import {AppStore} from '@App/app.store';
 import {Icon} from '@Components/menu/icon';
 import {LangSelector} from '@Components/menu/lang-selector';
 
@@ -17,9 +16,5 @@ import {LangSelector} from '@Components/menu/lang-selector';
   styleUrl: './menu.css',
 })
 export class Menu {
-
-  appStore = inject(AppStore);
-
-
 
 }

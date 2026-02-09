@@ -1,0 +1,33 @@
+<div class="w-full h-max bordered-bottom">
+
+  <section-title [title_key]="'home.technical_skills'"/>
+
+  <div class=" w-full
+      grid
+      gap-4
+      py-8
+      lg:grid-cols-4
+      md:grid-cols-3
+      not-sm:grid-cols-2
+      ">
+
+    @for (categorizedStack of state.stacks(); track $index) {
+      <div class="bg-(--light-black) pb-4 h-max" >
+        <div class="w-full uppercase pl-3 py-2 font-light">
+          {{ categorizedStack.category }}
+        </div>
+
+        <div class="grid grid-cols-4 gap-4 px-4 ">
+          @for (stack of categorizedStack.stacks; track $index) {
+            <tech-stack-item
+              [stack]="stack"
+              [active]="stack === state.selected_stack()"
+              (selectStack)="selectStack($event)"/>
+          }
+        </div>
+
+      </div>
+    }
+  </div>
+
+</div>

@@ -20,45 +20,47 @@
   }
 }
 
+.item-hover-en, .item-hover-fr {
+  top: -5px;
+  height: 38px;
+  display: none;
+}
+
+.label:hover~.item-hover-en ,
+.label:hover~.item-hover-fr {
+  display: block;
+}
 
 .label:nth-child(1):hover~.item-hover-en {
   left: 0;
-  width: 65px;
 }
 
 .label:nth-child(2):hover~.item-hover-en {
-  left: 68px;
-  width: 70px;
+  left: 100px;
 }
 
 .label:nth-child(3):hover~.item-hover-en {
-  left: 141px;
-  width: 93px;
+  left: 200px;
+  width: 100px;
 }
 
 .label:nth-child(4):hover~.item-hover-en {
-  left: 235px;
-  width: 60px;
+  left: 300px;
 }
-
 
 .label:nth-child(1):hover~.item-hover-fr {
   left: 0;
-  width: 81px;
 }
 
 .label:nth-child(2):hover~.item-hover-fr {
-  left: 84px;
-  width: 92px;
+  left: 100px;
 }
 
 .label:nth-child(3):hover~.item-hover-fr {
-  left: 178px;
-  width: 82px;
+  left: 200px;
 }
 
 .label:nth-child(4):hover~.item-hover-fr {
-  left: 263px;
-  width: 60px;
+  left: 300px;
 }
 

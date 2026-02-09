@@ -8,7 +8,7 @@ gc:
 	&& git add ./$(name)
 
 gcc:
-	cd src/app/components/$(parent) && ng generate component $(name) --prefix=$(parent) \
+	cd src/app/components/$(parent) && ng generate component $(name) --prefix=$(prefix) \
 	&& cd $(name) && touch index.ts && echo "export * from './$(name)';" > index.ts \
 	&& cd .. && echo "export * from './$(name)';" >> index.ts \
 	&& git add ./$(name)

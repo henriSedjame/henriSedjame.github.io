@@ -1,0 +1,130 @@
+.stack-system {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  background-color: var(--white);
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .rotation-circle {
+
+    position: absolute;
+    left: 50%;
+    top:50%;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%);
+
+    background-color: rgba(73, 73, 73, 0.05);
+
+
+    .electron {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background-color: rgba(99, 99, 99, 0.2);
+
+      left: -50px;
+      top: -50px;
+      border-radius: 50%;
+
+    }
+
+  }
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgb(0, 0, 0);
+
+    .rotation-circle{
+      animation-play-state: paused;
+      box-shadow: 0 1px 8px rgba(12, 12, 12, 0.5);
+
+      .electron > img {
+        animation-play-state: paused;
+      }
+    }
+  }
+
+}
+
+
+.rotation-circle:nth-child(5)  {
+  padding: 250px;
+  animation: inverse-rotation 18s infinite linear;
+  border-top: 1px rgba(128, 128, 128, 0.2) solid;
+
+  .electron {
+    margin: 75px 130px;
+    img {
+      animation: inverse-rotation-electron 18s infinite linear;
+    }
+  }
+}
+
+.rotation-circle:nth-child(4)  {
+  padding: 200px;
+  animation: rotation 20s infinite linear;
+  border-left: 1px rgba(128, 128, 128, 0.2) solid;
+
+  .electron {
+    margin: 65px 110px;
+    img {
+      animation: rotation-electron 20s infinite linear;
+    }
+  }
+}
+
+.rotation-circle:nth-child(3)  {
+  padding: 150px;
+  animation: inverse-rotation 22s infinite linear;
+  border-top: 1px rgba(128, 128, 128, 0.2) solid;
+
+  .electron {
+    margin: 55px 90px;
+    img {
+      animation: inverse-rotation-electron 22s infinite linear;
+    }
+  }
+}
+
+.rotation-circle:nth-child(2)  {
+  padding: 100px;
+  animation: rotation 18s infinite linear;
+  border-left: 1px rgba(128, 128, 128, 0.2) solid;
+
+  .electron {
+    margin: 48px 70px;
+    img {
+      animation: rotation-electron 18s infinite linear;
+    }
+  }
+}
+
+
+@keyframes rotation {
+  0% { transform: translate(-50%, -50%) rotate(-360deg); }
+}
+
+@keyframes inverse-rotation {
+  0% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes rotation-electron {
+  0% { transform: rotate(360deg); }
+}
+
+@keyframes inverse-rotation-electron {
+  0% { transform: rotate(-360deg); }
+}

@@ -3,6 +3,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Orbitron:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fuggles&display=swap');
 
 @import "tailwindcss";
 @theme {
@@ -14,7 +15,9 @@
 
   --white: #ffffff;
   --black: #101010;
+  --light-black: rgba(23, 23, 23, 0.84);
   --grey: #8f8f8f;
+  --light-grey: rgba(196, 196, 196, 0.22);
   --yellow: #ffea00;
 
   --line-thickness: 0.005rem;
@@ -66,10 +69,9 @@ html, body {
 }
 
 .subtitle {
-  font-weight: 200;
-  font-family: 'Cal Sans', sans-serif;
+  font-weight: 400;
+  font-family: 'Fuggles', cursive, sans-serif;
 }
-
 
 
 .divider {
@@ -84,12 +86,19 @@ html, body {
   background-color: var(--line-color);
 }
 
+.bordered{
+  border: var(--line-thickness) solid var(--line-color);
+}
 .bordered-right {
   border-right: var(--line-thickness) solid var(--line-color);
 }
 
 .bordered-left {
   border-left: var(--line-thickness) solid var(--line-color);
+}
+
+.bordered-top {
+  border-top: var(--line-thickness) solid var(--line-color);
 }
 
 .bordered-bottom {
@@ -108,6 +117,16 @@ html, body {
   z-index: -1;
 }
 
+.glass {
+  background: rgba(16, 16, 16, 0.94);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(150px);
+  -webkit-backdrop-filter: blur(150px);
+}
+
+.w-stretch {
+  width: stretch;
+}
 /* Mobile */
 @media (max-width: 767px) {
   .responsive-width {

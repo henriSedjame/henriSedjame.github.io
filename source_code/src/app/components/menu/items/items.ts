@@ -2,13 +2,13 @@ import {Component, computed, inject} from '@angular/core';
 import {AppStore} from '@App/app.store';
 import {NgClass} from '@angular/common';
 import {MENU_ITEMS, MenuItem} from '@App/models';
-import {TranslatePipe} from '@ngx-translate/core';
+import {Translated} from '@App/components/translated';
 
 @Component({
   selector: 'menu-items',
   imports: [
     NgClass,
-    TranslatePipe
+    Translated
   ],
   templateUrl: './items.html',
   styleUrl: './items.css',
