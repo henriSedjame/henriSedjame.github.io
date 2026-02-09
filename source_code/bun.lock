@@ -23,7 +23,6 @@
         "@angular/build": "^21.0.2",
         "@angular/cli": "^21.0.2",
         "@angular/compiler-cli": "^21.0.0",
-        "@ngrx/signals": "^21.0.1",
         "@ngrx/store-devtools": "21.0.1",
         "@tailwindcss/postcss": "^4.1.12",
         "@types/bun": "latest",
