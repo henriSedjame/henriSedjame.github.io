@@ -11,7 +11,7 @@ import {Translated} from '@App/components/translated';
     Translated
   ],
   templateUrl: './items.html',
-  styleUrl: './items.css',
+  styleUrl: './items.scss',
 })
 export class Items {
 

@@ -13,7 +13,7 @@ import {LangSelector} from '@Components/menu/lang-selector';
     LangSelector
   ],
   templateUrl: './menu.html',
-  styleUrl: './menu.css',
+  styleUrl: './menu.scss',
 })
 export class Menu {
 

@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   selector: 'menu-title',
   imports: [],
   templateUrl: './title.html',
-  styleUrl: './title.css',
+  styleUrl: './title.scss',
 })
 export class Title {
 

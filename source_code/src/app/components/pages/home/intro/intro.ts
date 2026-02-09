@@ -7,7 +7,7 @@ import {Translated} from '@App/components';
     Translated
   ],
   templateUrl: './intro.html',
-  styleUrl: './intro.css',
+  styleUrl: './intro.scss',
 })
 export class Intro {
 

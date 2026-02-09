@@ -7,7 +7,7 @@ import {NgStyle} from '@angular/common';
     NgStyle
   ],
   templateUrl: './space.html',
-  styleUrl: './space.css',
+  styleUrl: './space.scss',
 })
 export class Space {
   height = input(10)

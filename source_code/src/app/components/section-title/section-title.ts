@@ -7,7 +7,7 @@ import {Translated} from '@App/components';
     Translated
   ],
   templateUrl: './section-title.html',
-  styleUrl: './section-title.css',
+  styleUrl: './section-title.scss',
 })
 export class SectionTitle {
 

@@ -8,7 +8,7 @@ import {Menu} from '@Components/menu';
   selector: 'app-root',
   imports: [RouterOutlet, Background, Layout, Menu],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.scss'
 })
 export class App {
 

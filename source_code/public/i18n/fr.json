@@ -10,7 +10,6 @@
     "subtitle": "Développeur full-stack passionné",
     "description": "Autodidacte à bien des égards, je conçois et implémente des applications en m’appuyant sur plusieurs technologies couvrant l’ensemble de la chaîne applicative. Mon travail s’articule autour de la conception d’interfaces fonctionnelles, de la mise en place de logiques métier robustes et du développement d’API fiables. J’écris également des bibliothèques open source afin de contribuer, à mon échelle, à l’écosystème du développement. Attentif à la structure du code, aux performances et à la maintenabilité, je cherche à produire des solutions claires, évolutives et adaptées à des usages réels.",
     "technical_skills": "Compétences techniques"
-  }
-
-
+  },
+  "close" : "fermer"
 }

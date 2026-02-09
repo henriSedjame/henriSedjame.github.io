@@ -9,7 +9,7 @@ import {TechStack} from '@App/models';
     NgOptimizedImage
   ],
   templateUrl: './stack.html',
-  styleUrl: './stack.css',
+  styleUrl: './stack.scss',
 })
 export class Stack {
 

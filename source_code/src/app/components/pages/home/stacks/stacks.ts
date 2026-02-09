@@ -12,7 +12,7 @@ import {SectionTitle} from '@App/components';
     SectionTitle
   ],
   templateUrl: './stacks.html',
-  styleUrl: './stacks.css',
+  styleUrl: './stacks.scss',
 })
 export class Stacks {
 

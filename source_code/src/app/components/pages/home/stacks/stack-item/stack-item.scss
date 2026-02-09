@@ -1,0 +1,129 @@
+$bloc_height: 300px;
+$bloc_width: 50%;
+
+@mixin detail_bloc($top, $left, $width, $height) {
+  top: calc(50% - $bloc_height/2);
+  left: calc(50% - $bloc_width/2);
+  opacity: 1;
+  width: $bloc_width;
+  height: $bloc_height;
+}
+
+.opened {
+
+  @include detail_bloc(
+      calc(50% - $bloc_height/2),
+      calc(50% - $bloc_width/2),
+      $bloc_width,
+      $bloc_height
+  );
+
+  animation: open_detail .5s cubic-bezier(.3, 1.5, .25, 1);
+
+  .icon {
+    padding: 4px;
+    animation: open_detail_icon .5s cubic-bezier(.3, 1.5, .25, 1);
+    img {
+      scale: .6;
+      animation: open_detail_icon_img .5s cubic-bezier(.3, 1.5, .25, 1);
+    }
+  }
+
+}
+
+.closed {
+  @include detail_bloc(
+      var(--position-top),
+      var(--position-left),
+      var(--width),
+      var(--height)
+  );
+
+  background-color: var(--light-grey);
+  animation: close_detail .5s cubic-bezier(.3, 1.1, .25, 1);
+
+  .icon {
+    padding: 8px;
+    animation: close_detail_icon .5s cubic-bezier(.3, 1.1, .25, 1);
+    img {
+      scale: 1;
+      animation: close_detail_icon_img .5s cubic-bezier(.3, 1.1, .25, 1);
+    }
+  }
+}
+
+@keyframes open_detail {
+  0% {
+    top: var(--position-top);
+    left: var(--position-left);
+    opacity: 0.2;
+    width: var(--width);
+    height: var(--height);
+  }
+  100% {
+    top: calc(50% - $bloc_height/2);
+    left: calc(50% - $bloc_width/2);
+    opacity: 1;
+    width: $bloc_width;
+    height: $bloc_height;
+  }
+}
+
+@keyframes open_detail_icon {
+  0% {
+    padding: 8px;
+  }
+  100% {
+    padding: 4px;
+  }
+}
+
+@keyframes open_detail_icon_img {
+  0% {
+    scale: 1;
+  }
+  100% {
+    scale: .6;
+  }
+}
+
+@keyframes close_detail {
+  0% {
+    top: calc(50% - $bloc_height/2);
+    left: calc(50% - $bloc_width/2);
+    opacity: 1;
+    width: $bloc_width;
+    height: $bloc_height;
+    z-index: 2;
+
+  }
+  99.9% {
+    top: var(--position-top);
+    left: var(--position-left);
+    opacity: 1;
+    width: var(--width);
+    height: var(--height);
+  }
+  100%{
+    background-color: var(--light-grey);
+  }
+
+}
+
+@keyframes close_detail_icon {
+  0% {
+    padding: 4px;
+  }
+  99.9% {
+    padding: 8px;
+  }
+}
+
+@keyframes close_detail_icon_img {
+  0% {
+    scale: .6;
+  }
+  99.9% {
+    scale: 1;
+  }
+}

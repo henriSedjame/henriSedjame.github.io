@@ -10,7 +10,7 @@ import {LangSelector} from '@Components/menu/lang-selector';
     LangSelector
   ],
   templateUrl: './icon.html',
-  styleUrl: './icon.css',
+  styleUrl: './icon.scss',
 })
 export class Icon {
   appStore = inject(AppStore);

@@ -20,6 +20,9 @@ jobs:
       - name: install dependencies
         run: cd source_code && bun install
 
+      - name: remove old build
+        run: find . -name 'main-*.js' -delete && find . -name 'styles-*.css' -delete
+
       - name: build
         run: cd source_code && bun run build && cp -r ${{env.dist_all}} .. && rm -rf ${{env.dist}}
 

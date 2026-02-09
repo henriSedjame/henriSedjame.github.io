@@ -7,7 +7,7 @@ import {TranslatePipe} from '@ngx-translate/core';
     TranslatePipe
   ],
   templateUrl: './translated.html',
-  styleUrl: './translated.css',
+  styleUrl: './translated.scss',
 })
 export class Translated {
   value = input.required<string>();

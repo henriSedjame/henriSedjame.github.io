@@ -4,6 +4,6 @@ import {Component} from '@angular/core';
   selector: 'background',
   imports: [],
   templateUrl: './background.html',
-  styleUrl: './background.css',
+  styleUrl: './background.scss',
 })
 export class Background {}

@@ -9,7 +9,7 @@ import {Language} from '@App/models';
     NgClass
   ],
   templateUrl: './lang-selector.html',
-  styleUrl: './lang-selector.css',
+  styleUrl: './lang-selector.scss',
 })
 export class LangSelector {
   appStore = inject(AppStore);

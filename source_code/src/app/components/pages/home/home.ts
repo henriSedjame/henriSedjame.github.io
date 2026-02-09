@@ -11,7 +11,7 @@ import {Space} from '@App/components';
     Space
   ],
   templateUrl: './home.html',
-  styleUrl: './home.css',
+  styleUrl: './home.scss',
 })
 export class Home {
 }
