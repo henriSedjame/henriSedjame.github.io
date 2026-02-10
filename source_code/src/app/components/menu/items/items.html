@@ -1,18 +1,11 @@
-<div
-  class="relative flex flex-row not-sm:flex-col not-sm:space-y-4 items-center not-sm:items-start justify-start ml-4 ">
+@for (item of menu_items; track $index) {
+  <div
+    class="label"
+    [ngClass]="currentItem() === item.label ? 'active' : ''"
+    (click)="setCurrentItem(item)"
+  >
+    <translated [value]="`menu.${item.label}`"/>
+  </div>
+}
 
-  @for (item of menu_items; track $index) {
-    <div
-      class="label z-2 py-1 w-25 text-center"
-      [ngClass]="currentItem() === item.label ? 'active' : ''"
-      (click)="setCurrentItem(item)"
-    >
-      <translated [value]="`menu.${item.label}`"/>
-    </div>
-  }
-
-  <div class="absolute w-25 bg-(--grey) opacity-20 rounded-lg z-1 duration-100 hidden-on-mobile"
-       [ngClass]="item_hover_class()"
-  ></div>
-
-</div>
+<div class="item-hover"></div>

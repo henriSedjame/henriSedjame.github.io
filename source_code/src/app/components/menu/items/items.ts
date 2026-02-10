@@ -21,8 +21,6 @@ export class Items {
 
   currentItem = computed(() => this.appStore.menu().currentItem.label);
 
-  item_hover_class = computed(() => this.appStore.currentLanguage() === 'en' ? 'item-hover-en' : 'item-hover-fr');
-
   setCurrentItem(item: MenuItem) {
     this.appStore.setCurrentMenuItem(item);
     if (this.appStore.menu().opened) this.appStore.toggleMenuOpened();

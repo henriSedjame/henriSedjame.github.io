@@ -1,0 +1,39 @@
+@mixin full-border {
+  border: var(--line-thickness) solid var(--line-color);
+}
+
+@mixin right-border {
+  border-right: var(--line-thickness) solid var(--line-color);
+}
+
+@mixin left-border {
+  border-left: var(--line-thickness) solid var(--line-color);
+}
+
+@mixin top-border {
+  border-top: var(--line-thickness) solid var(--line-color);
+}
+
+@mixin bottom-border {
+  border-bottom: var(--line-thickness) solid var(--line-color);
+}
+
+@mixin glass-effect {
+  background: rgba(16, 16, 16, 0.94);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(150px);
+  -webkit-backdrop-filter: blur(150px);
+}
+
+@mixin columns($items-position: center, $content-position: center) {
+  display: flex;
+  flex-direction: column;
+  align-items: $items-position;
+  justify-content: $content-position;
+}
+
+@mixin rows($items-position: center, $content-position: center) {
+  display: flex;
+  align-items: $items-position;
+  justify-content: $content-position;
+}

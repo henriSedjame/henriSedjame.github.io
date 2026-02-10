@@ -1,4 +1,19 @@
+@use 'mixins' as *;
+@use 'breakpoints' as *;
 
+:host {
+  position: relative;
+
+  @include mobile {
+    @include columns;
+    gap: 16px;
+  }
+
+  @include not-mobile {
+    @include rows(start, center);
+  }
+
+}
 
 .label {
   font-size: .8rem;
@@ -6,6 +21,10 @@
   text-transform: uppercase;
   cursor: pointer;
   opacity: .7;
+  z-index: 2;
+  padding-block: 4px;
+  width: 100px;
+  text-align: center;
 
   &:hover {
     color: var(--white);
@@ -20,47 +39,44 @@
   }
 }
 
-.item-hover-en, .item-hover-fr {
-  top: -5px;
-  height: 38px;
-  display: none;
+.item-hover {
+
+  @include mobile {
+    display: none;
+  }
+
+  @include not-mobile {
+    display: none;
+    position: absolute;
+    width: 100px;
+    top: -5px;
+    height: 38px;
+    background-color: var(--grey);
+    opacity: .2;
+    border-radius: 8px;
+    z-index: 1;
+    animation-duration: 100ms;
+  }
+
 }
 
-.label:hover~.item-hover-en ,
-.label:hover~.item-hover-fr {
+.label:hover~.item-hover {
   display: block;
 }
 
-.label:nth-child(1):hover~.item-hover-en {
+.label:nth-child(1):hover~.item-hover {
   left: 0;
 }
 
-.label:nth-child(2):hover~.item-hover-en {
+.label:nth-child(2):hover~.item-hover {
   left: 100px;
 }
 
-.label:nth-child(3):hover~.item-hover-en {
+.label:nth-child(3):hover~.item-hover {
   left: 200px;
-  width: 100px;
+
 }
 
-.label:nth-child(4):hover~.item-hover-en {
+.label:nth-child(4):hover~.item-hover {
   left: 300px;
 }
-
-.label:nth-child(1):hover~.item-hover-fr {
-  left: 0;
-}
-
-.label:nth-child(2):hover~.item-hover-fr {
-  left: 100px;
-}
-
-.label:nth-child(3):hover~.item-hover-fr {
-  left: 200px;
-}
-
-.label:nth-child(4):hover~.item-hover-fr {
-  left: 300px;
-}
-

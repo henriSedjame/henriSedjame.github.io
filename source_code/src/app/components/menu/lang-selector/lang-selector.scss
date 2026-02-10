@@ -1,32 +1,40 @@
-.lang {
-  font-size: .8rem;
-  font-weight: 400;
-  color: var(--white);
-  user-select: none;
+@use 'mixins' as *;
+
+:host {
+  @include columns;
+  @include left-border;
 }
 
-.flag {
-  font-size: 1.3rem;
-  cursor: default;
-  user-select: none;
-}
+.lang-bloc{
+  @include rows;
+  padding-inline: 12px;
+  gap: 4px;
 
-.inactive {
-  cursor: pointer;
-  filter: saturate(0.5);
-  scale: .8;
-  opacity: .7;
-
-  &:hover {
-    opacity: .9;
-    filter: saturate(1);
-    scale: 1;
+  .lang {
+    font-size: .8rem;
+    font-weight: 400;
+    color: var(--white);
+    user-select: none;
   }
+
+  .flag {
+    font-size: 1.3rem;
+    cursor: default;
+    user-select: none;
+  }
+
+  &.inactive {
+    cursor: pointer;
+    filter: saturate(0.5);
+    scale: .8;
+    opacity: .7;
+
+    &:hover {
+      opacity: .9;
+      filter: saturate(1);
+      scale: 1;
+    }
+  }
+
 }
 
-.flag-divider {
-  width: var(--line-thickness);
-  height: 20px;
-  background-color: var(--line-color);
-  margin: 0 8px 0 8px;
-}

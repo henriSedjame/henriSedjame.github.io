@@ -1,12 +1,22 @@
+@use 'mixins' as *;
+
+.icon {
+  @include columns(end, end);
+
+  width: 100%;
+  padding-right: 16px;
+  cursor: pointer;
+}
+
 .menu-label {
   font-size: .45rem;
   font-weight: 600;
   color: var(--white);
 
   &.close {
-    font-size: .43rem;
+    font-size: .44rem;
     margin-top: 3px;
-    color: var(--grey);
+    color: var(--white);
   }
 }
 
@@ -15,6 +25,7 @@
   font-weight: 600;
   color: var(--grey);
 }
+
 .bar {
   width: 26px;
   height: 2px;
@@ -26,13 +37,21 @@
 }
 
 .menu-box {
-  background-color: var(--black);
-  box-shadow: 0 0 10px rgba(76, 76, 76, 0.5);
-  max-width: 200px;
-  min-width: 150px;
+  @include glass-effect;
+
+  position: absolute;
+  top: 68px;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  padding-top: 16px;
+
 }
 
 .lang-selector-container {
+  @include rows(center, end);
+  margin-top: 24px;
+  padding: 0;
   background-color: var(--black);
   border-top: var(--line-thickness) solid var(--line-color);
 }

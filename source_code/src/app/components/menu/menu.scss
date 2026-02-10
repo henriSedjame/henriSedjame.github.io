@@ -1,8 +1,41 @@
+@use 'mixins' as *;
+@use 'breakpoints' as *;
 
-.m {
+:host {
+
+  @include bottom-border;
+  @include glass-effect;
+
+  width: 100%;
+  height: max-content;
   display: flex;
-  flex: 4;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
+}
+
+.items {
+  @include mobile {
+    display: none;
+  }
+  @include not-mobile {
+    @include left-border;
+
+    display: flex;
+    flex: 4;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.icon {
+  @include mobile {
+    display: flex;
+    flex: 2;
+    align-items: center;
+    justify-content: end;
+  }
+
+  @include not-mobile {
+    display: none;
+  }
 }

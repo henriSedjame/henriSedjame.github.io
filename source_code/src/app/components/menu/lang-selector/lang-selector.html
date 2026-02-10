@@ -1,13 +1,14 @@
-<div class="flex flex-col space-y-0 items-center justify-center bordered-left">
-  <div class="flex space-x-1 items-center justify-center px-3" [ngClass]="isFrEnabled() ? '' : 'inactive'" (click)="switchLanguage('fr')">
-    <span class="flag" >🇫🇷</span>
-    <span class="lang">FR</span>
-  </div>
-
-  <div class="divider"> </div>
-
-  <div class="flex space-x-1 items-center justify-center px-3" [ngClass]="isEnEnabled() ? '' : 'inactive'" (click)="switchLanguage('en')" >
-    󠁮<span class="flag"  > 🇬🇧</span>󠁿
-    <span class="lang">EN</span>
-  </div>
+<div class="lang-bloc" [ngClass]="isFrEnabled() ? '' : 'inactive'"
+     (click)="switchLanguage('fr')">
+  <span class="flag">🇫🇷</span>
+  <span class="lang">FR</span>
 </div>
+
+<div class="divider"></div>
+
+<div class="lang-bloc" [ngClass]="isEnEnabled() ? '' : 'inactive'"
+     (click)="switchLanguage('en')">
+  󠁮<span class="flag"> 🇬🇧</span>󠁿
+  <span class="lang">EN</span>
+</div>
+

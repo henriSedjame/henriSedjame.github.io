@@ -1,25 +1,20 @@
-<div
-  class="w-full flex flex-col items-end justify-end pr-4 cursor-pointer"
-  (click)="toggleMenu()"
->
+<div class="icon" (click)="toggleMenu()">
   @if (!isMenuOpened()) {
     <div class="bar first"></div>
     <div class="bar"></div>
     <div class="menu-label">MENU</div>
+  } @else {
+    <span class="bar"></span>
+    <div class="menu-label close">CLOSE</div>
   }
 
 </div>
 
 @if (isMenuOpened()) {
-  <div class="absolute top-17 right-1 z-2  w-1/2 menu-box">
-    <div class="flex flex-row space-x-1 justify-end items-center mb-4 pr-2 cursor-pointer" (click)="toggleMenu()">
-      <span class="x">x</span>
-      <div class="menu-label close">CLOSE</div>
-    </div>
-
-    <menu-items />
-    <div class="py-0 px-0 mt-6 justify-end flex lang-selector-container">
-      <menu-lang-selector />
+  <div class="menu-box">
+    <menu-items/>
+    <div class="lang-selector-container">
+      <menu-lang-selector/>
     </div>
   </div>
 }
