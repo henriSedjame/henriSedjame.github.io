@@ -8,7 +8,7 @@
       py-8
       lg:grid-cols-4
       md:grid-cols-3
-      not-sm:grid-cols-2
+      sm:grid-cols-2
       ">
 
     @for (categorizedStack of state.stacks(); track $index) {
@@ -17,7 +17,7 @@
           {{ categorizedStack.category }}
         </div>
 
-        <div class="grid grid-cols-4 gap-4 px-4 ">
+        <div class="grid grid-cols-4  not-sm:grid-cols-6 gap-4 px-4 ">
           @for (stack of categorizedStack.stacks; track $index) {
             <tech-stack-item
               [stack]="stack"

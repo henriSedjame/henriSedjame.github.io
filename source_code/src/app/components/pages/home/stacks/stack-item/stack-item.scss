@@ -1,12 +1,37 @@
-$bloc_height: 300px;
+@use 'breakpoints' as bp;
+
+$bloc_height: 500px;
 $bloc_width: 50%;
 
+$gap_on_mobile: 10px;
+$size_on_mobile: calc(100% - 2*$gap_on_mobile);
+
+
 @mixin detail_bloc($top, $left, $width, $height) {
-  top: calc(50% - $bloc_height/2);
-  left: calc(50% - $bloc_width/2);
-  opacity: 1;
-  width: $bloc_width;
-  height: $bloc_height;
+
+  @include bp.mobile {
+    top: $gap_on_mobile;
+    left: $gap_on_mobile;
+    opacity: 1;
+    width: $size_on_mobile;
+    height: $size_on_mobile;
+  }
+
+  @include bp.tablet {
+    top: calc(50% - $bloc_height/2);
+    left: calc(50% - $bloc_width/2);
+    opacity: 1;
+    width: $bloc_width;
+    height: $bloc_height;
+  }
+
+  @include bp.desktop {
+    top: calc(50% - $bloc_height/2);
+    left: calc(50% - $bloc_width/2);
+    opacity: 1;
+    width: $bloc_width;
+    height: $bloc_height;
+  }
 }
 
 .opened {
@@ -52,20 +77,127 @@ $bloc_width: 50%;
   }
 }
 
-@keyframes open_detail {
-  0% {
-    top: var(--position-top);
-    left: var(--position-left);
-    opacity: 0.2;
-    width: var(--width);
-    height: var(--height);
+@include bp.mobile {
+  @keyframes open_detail {
+    0% {
+      top: var(--position-top);
+      left: var(--position-left);
+      opacity: 0.2;
+      width: var(--width);
+      height: var(--height);
+    }
+    100% {
+      top: $gap_on_mobile;
+      left: $gap_on_mobile;
+      opacity: 1;
+      width: $size_on_mobile;
+      height: $size_on_mobile;
+    }
   }
-  100% {
-    top: calc(50% - $bloc_height/2);
-    left: calc(50% - $bloc_width/2);
-    opacity: 1;
-    width: $bloc_width;
-    height: $bloc_height;
+
+  @keyframes close_detail {
+    0% {
+      top: $gap_on_mobile;
+      left: $gap_on_mobile;
+      opacity: 1;
+      width: $size_on_mobile;
+      height: $size_on_mobile;
+      z-index: 2;
+
+    }
+    99.9% {
+      top: var(--position-top);
+      left: var(--position-left);
+      opacity: 1;
+      width: var(--width);
+      height: var(--height);
+    }
+    100%{
+      background-color: var(--light-grey);
+    }
+
+  }
+}
+
+@include bp.tablet {
+  @keyframes open_detail {
+    0% {
+      top: var(--position-top);
+      left: var(--position-left);
+      opacity: 0.2;
+      width: var(--width);
+      height: var(--height);
+    }
+    100% {
+      top: calc(50% - $bloc_height/2);
+      left: calc(50% - $bloc_width/2);
+      opacity: 1;
+      width: $bloc_width;
+      height: $bloc_height;
+    }
+  }
+  @keyframes close_detail {
+    0% {
+      top: calc(50% - $bloc_height/2);
+      left: calc(50% - $bloc_width/2);
+      opacity: 1;
+      width: $bloc_width;
+      height: $bloc_height;
+      z-index: 2;
+
+    }
+    99.9% {
+      top: var(--position-top);
+      left: var(--position-left);
+      opacity: 1;
+      width: var(--width);
+      height: var(--height);
+    }
+    100%{
+      background-color: var(--light-grey);
+    }
+
+  }
+}
+
+@include bp.desktop {
+  @keyframes open_detail {
+    0% {
+      top: var(--position-top);
+      left: var(--position-left);
+      opacity: 0.2;
+      width: var(--width);
+      height: var(--height);
+    }
+    100% {
+      top: calc(50% - $bloc_height/2);
+      left: calc(50% - $bloc_width/2);
+      opacity: 1;
+      width: $bloc_width;
+      height: $bloc_height;
+    }
+  }
+  @keyframes close_detail {
+    0% {
+      top: calc(50% - $bloc_height/2);
+      left: calc(50% - $bloc_width/2);
+      opacity: 1;
+      width: $bloc_width;
+      height: $bloc_height;
+      z-index: 2;
+
+    }
+    99.9% {
+      top: var(--position-top);
+      left: var(--position-left);
+      opacity: 1;
+      width: var(--width);
+      height: var(--height);
+    }
+    100%{
+      background-color: var(--light-grey);
+    }
+
   }
 }
 
@@ -87,28 +219,7 @@ $bloc_width: 50%;
   }
 }
 
-@keyframes close_detail {
-  0% {
-    top: calc(50% - $bloc_height/2);
-    left: calc(50% - $bloc_width/2);
-    opacity: 1;
-    width: $bloc_width;
-    height: $bloc_height;
-    z-index: 2;
 
-  }
-  99.9% {
-    top: var(--position-top);
-    left: var(--position-left);
-    opacity: 1;
-    width: var(--width);
-    height: var(--height);
-  }
-  100%{
-    background-color: var(--light-grey);
-  }
-
-}
 
 @keyframes close_detail_icon {
   0% {
