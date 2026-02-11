@@ -4,12 +4,3 @@
 @import url('https://fonts.googleapis.com/css2?family=Fuggles&display=swap');
 
 @import "tailwindcss";
-
-@theme {
-  --breakpoint-xs: 0;
-  --breakpoint-sm: 576px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 992px;
-  --breakpoint-xl: 1200px;
-  --breakpoint-xxl: 1400px;
-}

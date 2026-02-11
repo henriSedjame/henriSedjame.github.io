@@ -5,12 +5,14 @@
     "": {
       "name": "henrisedjame.dev",
       "dependencies": {
+        "@angular/cdk": "~21.1.4",
         "@angular/common": "^21.0.0",
         "@angular/compiler": "^21.0.0",
         "@angular/core": "^21.0.0",
         "@angular/forms": "^21.0.0",
         "@angular/platform-browser": "^21.0.0",
         "@angular/router": "^21.0.0",
+        "@hsedjame/optionjs": "^1.0.0",
         "@ngrx/signals": "^21.0.1",
         "@ngx-translate/core": "^17.0.0",
         "@ngx-translate/http-loader": "^17.0.0",
@@ -97,6 +99,8 @@
     "@angular-eslint/utils": ["@angular-eslint/utils@21.1.0", "", { "dependencies": { "@angular-eslint/bundled-angular-compiler": "21.1.0" }, "peerDependencies": { "@typescript-eslint/utils": "^7.11.0 || ^8.0.0", "eslint": "^8.57.0 || ^9.0.0", "typescript": "*" } }, "sha512-rWINgxGREu+NFUPCpAVsBGG8B4hfXxyswM0N5GbjykvsfB5W6PUix2Gsoh++iEsZPT+c9lvgXL5GbpwfanjOow=="],
 
     "@angular/build": ["@angular/build@21.1.1", "", { "dependencies": { "@ampproject/remapping": "2.3.0", "@angular-devkit/architect": "0.2101.1", "@babel/core": "7.28.5", "@babel/helper-annotate-as-pure": "7.27.3", "@babel/helper-split-export-declaration": "7.24.7", "@inquirer/confirm": "5.1.21", "@vitejs/plugin-basic-ssl": "2.1.0", "beasties": "0.3.5", "browserslist": "^4.26.0", "esbuild": "0.27.2", "https-proxy-agent": "7.0.6", "istanbul-lib-instrument": "6.0.3", "jsonc-parser": "3.3.1", "listr2": "9.0.5", "magic-string": "0.30.21", "mrmime": "2.0.1", "parse5-html-rewriting-stream": "8.0.0", "picomatch": "4.0.3", "piscina": "5.1.4", "rolldown": "1.0.0-beta.58", "sass": "1.97.1", "semver": "7.7.3", "source-map-support": "0.5.21", "tinyglobby": "0.2.15", "undici": "7.18.2", "vite": "7.3.0", "watchpack": "2.5.0" }, "optionalDependencies": { "lmdb": "3.4.4" }, "peerDependencies": { "@angular/compiler": "^21.0.0", "@angular/compiler-cli": "^21.0.0", "@angular/core": "^21.0.0", "@angular/localize": "^21.0.0", "@angular/platform-browser": "^21.0.0", "@angular/platform-server": "^21.0.0", "@angular/service-worker": "^21.0.0", "@angular/ssr": "^21.1.1", "karma": "^6.4.0", "less": "^4.2.0", "ng-packagr": "^21.0.0", "postcss": "^8.4.0", "tailwindcss": "^2.0.0 || ^3.0.0 || ^4.0.0", "tslib": "^2.3.0", "typescript": ">=5.9 <6.0", "vitest": "^4.0.8" }, "optionalPeers": ["@angular/localize", "@angular/platform-server", "@angular/service-worker", "@angular/ssr", "karma", "less", "ng-packagr"] }, "sha512-OqlfH7tkahw/lFT6ACU6mqt3AGgTxxT27JTqpzZOeGo1ferR9dq1O6/CT4GiNyr/Z1AMfs7rBWlQH68y1QZb2g=="],
+
+    "@angular/cdk": ["@angular/cdk@21.1.4", "", { "dependencies": { "parse5": "^8.0.0", "tslib": "^2.3.0" }, "peerDependencies": { "@angular/common": "^21.0.0 || ^22.0.0", "@angular/core": "^21.0.0 || ^22.0.0", "@angular/platform-browser": "^21.0.0 || ^22.0.0", "rxjs": "^6.5.3 || ^7.4.0" } }, "sha512-PElA4Ww4TIa3+B/ND+fm8ZPDKONTIqc9a/s0qNxhcAD9IpDqjaBVi/fyg+ZWBtS+x0DQgJtKeCsSZ6sr2aFQaQ=="],
 
     "@angular/cli": ["@angular/cli@21.1.1", "", { "dependencies": { "@angular-devkit/architect": "0.2101.1", "@angular-devkit/core": "21.1.1", "@angular-devkit/schematics": "21.1.1", "@inquirer/prompts": "7.10.1", "@listr2/prompt-adapter-inquirer": "3.0.5", "@modelcontextprotocol/sdk": "1.25.2", "@schematics/angular": "21.1.1", "@yarnpkg/lockfile": "1.1.0", "algoliasearch": "5.46.2", "ini": "6.0.0", "jsonc-parser": "3.3.1", "listr2": "9.0.5", "npm-package-arg": "13.0.2", "pacote": "21.0.4", "parse5-html-rewriting-stream": "8.0.0", "resolve": "1.22.11", "semver": "7.7.3", "yargs": "18.0.0", "zod": "4.3.5" }, "bin": { "ng": "bin/ng.js" } }, "sha512-eXhHuYvruWHBn7lX3GuAyLq29+ELwPADOW8ShzZkWRPNlIDiFDsS5pXrxkM9ez+8f86kfDHh88Twevn4UBUqQg=="],
 
@@ -249,6 +253,8 @@
     "@exodus/bytes": ["@exodus/bytes@1.9.0", "", { "peerDependencies": { "@noble/hashes": "^1.8.0 || ^2.0.0" }, "optionalPeers": ["@noble/hashes"] }, "sha512-lagqsvnk09NKogQaN/XrtlWeUF8SRhT12odMvbTIIaVObqzwAogL6jhR4DAp0gPuKoM1AOVrKUshJpRdpMFrww=="],
 
     "@hono/node-server": ["@hono/node-server@1.19.9", "", { "peerDependencies": { "hono": "^4" } }, "sha512-vHL6w3ecZsky+8P5MD+eFfaGTyCeOHUIFYMGpQGbrBTSmNNoxv0if69rEZ5giu36weC5saFuznL411gRX7bJDw=="],
+
+    "@hsedjame/optionjs": ["@hsedjame/optionjs@1.0.0", "", {}, "sha512-D+5oRb2h/JFcqnQr7fVkmBwXbR8ha9zPuaZAAkLsCpIxpj3CaOxNOlTMzvBeG0NulH44AjM2GXGvsI7hTh++4Q=="],
 
     "@humanfs/core": ["@humanfs/core@0.19.1", "", {}, "sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA=="],
 

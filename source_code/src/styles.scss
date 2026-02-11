@@ -12,6 +12,8 @@
   --grey: #8f8f8f;
   --light-grey: rgba(196, 196, 196, 0.22);
   --yellow: #ffea00;
+  --light-yellow: rgba(255, 234, 0, 0.4);
+
 
   --line-thickness: 0.005rem;
   --line-color: rgba(255, 255, 255, 0.3);
@@ -52,59 +54,8 @@ html, body {
 
 }
 
-.text-white {
-  color: var(--white) ;
-}
-
-.title {
-  font-weight: 400;
-  font-family: 'Anton', sans-serif;
-}
-
-
-
-.divider {
-  width: 100%;
-  height: var(--line-thickness);
-  background-color: var(--line-color);
-}
-
-.vertical-divider {
-  width: var(--line-thickness);
-  height: fit-content;
-  background-color: var(--line-color);
-}
-
 .bordered{
   border: var(--line-thickness) solid var(--line-color);
-}
-
-.bordered-right {
-  border-right: var(--line-thickness) solid var(--line-color);
-}
-
-.bordered-left {
-  border-left: var(--line-thickness) solid var(--line-color);
-}
-
-.bordered-top {
-  border-top: var(--line-thickness) solid var(--line-color);
-}
-
-.bordered-bottom {
-  border-bottom: var(--line-thickness) solid var(--line-color);
-}
-
-.yellow-bordered {
-  border: var(--line-thickness) solid var(--line-color);
-}
-
-.grey-shadowed {
-  box-shadow: 0 1px 3px rgb(101, 101, 101);
-}
-
-.bg {
-  z-index: -1;
 }
 
 .glass {
@@ -113,56 +64,3 @@ html, body {
   backdrop-filter: blur(150px);
   -webkit-backdrop-filter: blur(150px);
 }
-
-.w-stretch {
-  width: stretch;
-}
-
-/* Mobile */
-@media (max-width: 767px) {
-  .responsive-width {
-    width: 100vw;
-  }
-
-  .hidden-on-mobile {
-    display: none;
-  }
-
-  .description {
-    font-size: 1rem;
-  }
-}
-
-/* Tablet */
-@media (min-width: 768px) and (max-width: 1024px) {
-
-
-  .hidden-on-tablet {
-    display: none;
-  }
-
-  .description {
-    font-size: 1.05rem;
-  }
-}
-
-/* Desktop */
-@media (min-width: 1025px) {
-
-
-  .hidden-on-desktop {
-    display: none;
-  }
-
-  .description {
-    font-size: 1.1rem;
-  }
-
-}
-
-/**
-
-menu : z-2
-
-
-*/

@@ -1,15 +1,27 @@
 @use 'breakpoints' as *;
 
 .content-width {
-  @include mobile {
+  @include xs {
     max-width: 100vw;
   }
 
-  @include tablet {
+  @include sm {
     max-width: 100vw;
   }
 
-  @include desktop {
-    max-width: 80%;
+  @include md {
+    max-width: 100vw;
+  }
+
+  @include lg {
+    max-width: 90vw;
+  }
+
+  @include xl {
+    max-width: 85vw;
+  }
+
+  @include xxl {
+    max-width: 80vw;
   }
 }

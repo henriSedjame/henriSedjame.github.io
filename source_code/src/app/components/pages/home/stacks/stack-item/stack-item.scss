@@ -1,7 +1,8 @@
 @use 'breakpoints' as bp;
+@use 'mixins' as *;
 
-$bloc_height: 500px;
-$bloc_width: 50%;
+$bloc_height: 750px;
+$bloc_width: 75%;
 
 $gap_on_mobile: 10px;
 $size_on_mobile: calc(100% - 2*$gap_on_mobile);
@@ -34,6 +35,65 @@ $size_on_mobile: calc(100% - 2*$gap_on_mobile);
   }
 }
 
+@mixin icon {
+  aspect-ratio: 1;
+  border-radius: 4px;
+}
+
+.stack__icon {
+  @include rows;
+  @include icon;
+
+  background-color: var(--light-grey);
+  grid-column: span 1;
+  padding: 8px;
+  cursor: pointer;
+  filter:  saturate(0);
+
+  &:hover {
+    filter: saturate(1);
+  }
+}
+
+.voile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: var(--white);
+  opacity: 15%;
+  z-index: 1;
+  backdrop-filter: blur(10px);
+  --webkit-backdrop-filter: blur(10px);
+}
+
+.stack__detail {
+  @include full-container;
+  position: relative;
+}
+
+.close__btn {
+  @include left-border;
+  @include right-border;
+  @include bottom-border;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 8px 16px;
+  cursor: pointer;
+
+  font-size: .75rem;
+  color: var(--white);
+  font-weight: lighter;
+
+  opacity: 40%;
+
+  &:hover {
+    opacity: 100%;
+  }
+}
 .opened {
 
   @include detail_bloc(
@@ -46,6 +106,7 @@ $size_on_mobile: calc(100% - 2*$gap_on_mobile);
   animation: open_detail .5s cubic-bezier(.3, 1.5, .25, 1);
 
   .icon {
+    @include icon;
     padding: 4px;
     animation: open_detail_icon .5s cubic-bezier(.3, 1.5, .25, 1);
     img {
@@ -68,6 +129,7 @@ $size_on_mobile: calc(100% - 2*$gap_on_mobile);
   animation: close_detail .5s cubic-bezier(.3, 1.1, .25, 1);
 
   .icon {
+    @include icon;
     padding: 8px;
     animation: close_detail_icon .5s cubic-bezier(.3, 1.1, .25, 1);
     img {
@@ -218,8 +280,6 @@ $size_on_mobile: calc(100% - 2*$gap_on_mobile);
     scale: .6;
   }
 }
-
-
 
 @keyframes close_detail_icon {
   0% {

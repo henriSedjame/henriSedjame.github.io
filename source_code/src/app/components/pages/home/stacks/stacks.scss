@@ -1,1 +1,117 @@
+@use 'mixins' as *;
+@use 'breakpoints' as *;
+@use'sass:string';
+@use'sass:list';
+@use 'sass:map';
+@use "sass:selector";
+
+$stack_categories_length: 7;
+
+/**
+Build the stacks__category__grid__item css class by item index
+The grid-column is always equal to 1
+while the grid-row is equal to the value of --item-line- variable .
+This variable is set in the stacks.ts file
+**/
+@mixin stacks_category_items {
+  @for $i from 0 through $stack_categories_length {
+    .stacks__category__grid__item__#{$i} {
+      @include xs {
+        grid-row: span var(--item-line-#{$i}-xs);
+      }
+
+      @media(width >= map.get($breakpoints, sm)) {
+        grid-row: span var(--item-line-#{$i});
+      }
+
+      grid-column: span 1;
+
+      background-color: var(--light-grey);
+      padding-bottom: 12px;
+
+      &:hover {
+        background-color: var(--light-yellow);
+
+        .stacks__category__label {
+          font-weight: bold;
+          color: var(--black);
+        }
+
+        tech-stack-item {
+          background-color: var(--black);
+          border-radius: 8px;
+        }
+      }
+    }
+  }
+}
+
+:host {
+  @include bottom-border;
+
+  width: 100%;
+  height: max-content;
+}
+
+.stacks__category__label {
+  width: 100%;
+  text-transform: uppercase;
+  padding-left: 12px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-weight: lighter;
+  color: var(--white);
+}
+.stacks__category__grid {
+  padding: 50px 10px;
+  width: 100%;
+
+  @include xs {
+    grid-template-columns: repeat(var(--cols-number-xs), 1fr);
+    grid-template-rows: repeat(var(--rows-number-xs), 1fr);
+  }
+  @include sm {
+    grid-template-columns: repeat(var(--cols-number-sm), 1fr);
+    grid-template-rows: repeat(var(--rows-number-sm), 1fr);
+  }
+  @include md {
+    grid-template-columns: repeat(var(--cols-number-md), 1fr);
+    grid-template-rows: repeat(var(--rows-number-md), 1fr);
+  }
+  @include lg {
+    grid-template-columns: repeat(var(--cols-number-lg), 1fr);
+    grid-template-rows: repeat(var(--rows-number-lg), 1fr);
+  }
+  @include xl {
+    grid-template-columns: repeat(var(--cols-number-xl), 1fr);
+    grid-template-rows: repeat(var(--rows-number-xl), 1fr);
+  }
+  @include xxl {
+    grid-template-columns: repeat(var(--cols-number-xxl), 1fr);
+    grid-template-rows: repeat(var(--rows-number-xxl), 1fr);
+  }
+
+  display: grid;
+
+  gap: 10px;
+}
+
+@include stacks_category_items;
+
+.stack__items__grid {
+
+  display: grid;
+
+  @include xs {
+    grid-template-columns: repeat(var(--stack-cols-number-xs), 1fr);
+  }
+
+  @media(width >= map.get($breakpoints, sm)) {
+    grid-template-columns: repeat(var(--stack-cols-number), 1fr);
+  }
+  gap: 16px;
+  padding: 0 16px;
+
+}
+
 

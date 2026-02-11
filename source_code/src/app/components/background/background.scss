@@ -9,6 +9,7 @@
   @include full-screen;
   position: absolute;
   top: 0;
+  z-index: -1;
   background-color: black;
   background-image: radial-gradient(
     circle farthest-side at var(--bg-light-x, 100px) var(--bg-light-y, 100px),

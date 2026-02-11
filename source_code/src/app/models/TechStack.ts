@@ -57,7 +57,6 @@ export const STACKS : CategorizedTechStack[] = [
       ...explodeStack(Rust),
       ...explodeStack(Go),
     ])]
-
   },
   {
     category: 'frontend',
@@ -65,8 +64,23 @@ export const STACKS : CategorizedTechStack[] = [
       ...explodeStack(Typescript),
       ...explodeStack(Elm)
     ])],
-
   },
+  {
+    category: 'database',
+    stacks: []
+  },
+  {
+    category: 'messaging queue',
+    stacks: []
+  },
+  {
+    category: 'CI/CD',
+    stacks: [],
+  },
+  {
+    category: 'Test & Quality',
+    stacks: []
+  }
 
 
 ]

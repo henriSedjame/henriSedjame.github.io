@@ -37,7 +37,15 @@ export class StackItem {
       let rect = stackIcon?.getBoundingClientRect()
       let viewportWidth = window.visualViewport?.width || window.screen.width
 
-      let pd = viewportWidth > 1024 ? viewportWidth * 0.1 : 0
+      let pd = 0
+
+      if (viewportWidth >= 1600) {
+        pd = viewportWidth * 0.1
+      } else if (viewportWidth >= 1200) {
+        pd = viewportWidth * 0.075
+      } else if (viewportWidth >= 992) {
+        pd = viewportWidth * 0.05
+      }
 
       let top = ((rect?.y || 0)) + 'px';
       let left = ((rect?.left || 0) - pd ) + 'px';
@@ -52,12 +60,12 @@ export class StackItem {
 
       if (this.active()) {
 
-        this.renderer.addClass(stackDetail, 'absolute')
+        this.renderer.setStyle(stackDetail, 'position', 'absolute')
         this.renderer.addClass(stackDetail, 'glass')
         this.renderer.addClass(stackDetail, 'bordered')
-        this.renderer.addClass(stackDetail, 'rounded')
+        this.renderer.setStyle(stackDetail, 'border-radius', '4px')
 
-        this.renderer.addClass(stackDetail, 'z-2')
+        this.renderer.setStyle(stackDetail, 'z-index', '2')
         this.renderer.addClass(stackDetail, 'opened')
       }
     }

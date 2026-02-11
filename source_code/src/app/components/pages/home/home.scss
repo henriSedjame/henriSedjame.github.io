@@ -1,1 +1,24 @@
+@use 'mixins' as *;
+@use 'breakpoints' as *;
 
+:host {
+  @include columns;
+  width: 100%;
+
+  @include mobile {
+    padding-block: 25px;
+  }
+
+  @include not-mobile {
+    padding-block: 50px;
+  }
+}
+
+.space {
+  @include mobile {
+    height: 75px;
+  }
+  @include not-mobile {
+    height: 150px;
+  }
+}

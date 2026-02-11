@@ -1,3 +1,9 @@
+@use 'mixins' as *;
+
+:host {
+  @include  rows;
+
+}
 .stack-system {
   position: relative;
   width: 80px;

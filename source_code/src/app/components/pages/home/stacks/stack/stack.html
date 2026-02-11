@@ -1,11 +1,9 @@
-<div class="flex items-center justify-center min-h-180">
-  <div class="stack-system">
-    <img [ngSrc]="tech_stack().logo" width="50" height="50" alt="java icon"/>
+<div class="stack-system">
+  <img [ngSrc]="tech_stack().logo" width="50" height="50" alt="java icon"/>
 
-    @for (stack of tech_stack().linked_stacks; track $index) {
-      <div *ngTemplateOutlet="rotating_stack_element; context: { tech: stack}"></div>
-    }
-  </div>
+  @for (stack of tech_stack().linked_stacks; track $index) {
+    <div *ngTemplateOutlet="rotating_stack_element; context: { tech: stack}"></div>
+  }
 </div>
 
 
@@ -15,7 +13,7 @@
 >
   <div class="rotation-circle">
     <div class="electron ">
-      <img [ngSrc]="tech.logo" width="30" height="30" [alt]="tech.name + ' icon'" />
+      <img [ngSrc]="tech.logo" width="30" height="30" [alt]="tech.name + ' icon'"/>
     </div>
   </div>
 </ng-template>

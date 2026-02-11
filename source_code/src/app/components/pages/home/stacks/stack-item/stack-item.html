@@ -1,6 +1,6 @@
 <div
   #stack_icon
-  class="rounded bg-(--light-grey) flex items-center justify-center col-span-1 p-2 aspect-square cursor-pointer saturate-0 hover:saturate-100"
+  class="stack__icon"
   [ngClass]="active() ? 'opacity-20' : ''"
   (click)="open()"
 >
@@ -10,22 +10,19 @@
 </div>
 
 @if (active()) {
-  <div class="absolute top-0 left-0 w-full h-full bg-white opacity-15  z-1 backdrop-blur-lg "></div>
+  <div class="voile"></div>
 }
 
 <div #stack_detail>
 
   @if (active()) {
-    <div class="relative w-full h-full">
-      <div class="rounded aspect-square icon">
+    <div class="stack__detail">
+      <div class="icon">
         <img [ngSrc]="stack().logo" width="40" height="40" [alt]="stack().name + ' icon'"/>
       </div>
 
       <div
-        class="absolute top-0 right-0 py-2 px-4 bordered-left bordered-bottom bordered-right
-        text-xs text-white text-light
-        opacity-40 hover:opacity-100
-        cursor-pointer"
+        class="close__btn"
         (click)="close($event)"
       >
         <translated value="close"/>
