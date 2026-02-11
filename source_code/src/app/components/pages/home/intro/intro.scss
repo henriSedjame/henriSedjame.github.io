@@ -1,8 +1,163 @@
+@use 'mixins' as *;
+@use 'breakpoints' as *;
+@use 'variables' as *;
 
 
-.dot {
-
-  width: 11px;
-  height: 11px;
-  background-color: var(--yellow);
+@mixin mt_16{
+  margin-top: 16px;
 }
+
+@mixin unselectable {
+  user-select: none;
+}
+
+:host {
+  position: relative;
+  width: 100%;
+
+  @include xs {
+    padding-inline: 10px;
+  }
+
+  @include sm {
+    padding-inline: 25px;
+  }
+
+  @include not-mobile {
+    padding-inline: 100px;
+  }
+}
+
+.title_bloc {
+  @include rows(center, center);
+
+  @include mobile {
+    @include rows(baseline, center);
+  }
+
+  @include not-mobile {
+    @include rows(baseline, start);
+  }
+
+  margin-bottom: 75px;
+
+
+
+  .title {
+    @include unselectable;
+
+    @include xs {
+      font-size: 2.3rem;
+    }
+
+    @include sm {
+      font-size: 3.2rem;
+    }
+
+    @include md {
+      font-size: 3.5rem;
+    }
+
+    @include lg {
+      font-size: 4rem;
+    }
+
+    @include xl {
+      font-size: 4rem;
+    }
+
+    @include xxl {
+      font-size: 4rem;
+    }
+
+
+    font-weight: bold;
+    color: var(--white);
+
+  }
+
+  .dot {
+    @include xs {
+      margin: 3px;
+      width: 7px;
+      transform: translateY(.5px);
+    }
+
+    @include sm {
+      margin: 3px;
+      width: 9px;
+      transform: translateY(.5px);
+    }
+
+    @include tablet {
+      margin: 4px;
+      width: 10.5px;
+      transform: translateY(.5px);
+    }
+
+    @include desktop {
+      margin: 4px;
+      width: 12px;
+      transform: translateY(1px);
+    }
+
+    background-color: var(--yellow);
+    aspect-ratio: 1;
+  }
+}
+
+.subtitle {
+  position: absolute;
+
+  @include unselectable;
+
+  @include xs {
+    top: 35px;
+    left: 0;
+    text-align: center;
+    font-size: 2.5rem;
+  }
+
+  @include sm {
+    top: 50px;
+    left: 0;
+    text-align: center;
+    font-size: 3.4rem;
+  }
+
+  @include not-mobile {
+    top: 60px;
+    left: auto;
+    margin-top: 0;
+    text-align: start;
+    font-size: 3.8rem;
+  }
+
+  width: 100%;
+  opacity: .5;
+  font-weight: 400;
+  font-family: $cursive_font;
+  color: var(--yellow);
+}
+
+.description {
+  @include mt_16;
+  @include unselectable;
+  text-wrap: balance;
+  text-align: justify;
+
+  @include mobile {
+    padding-inline: 8px;
+    font-size: 1rem;
+  }
+  @include tablet {
+    padding-inline: 0;
+    font-size: 1rem;
+  }
+  @include desktop {
+    padding-inline: 0;
+    font-size: 1.1rem;
+  }
+}
+
+

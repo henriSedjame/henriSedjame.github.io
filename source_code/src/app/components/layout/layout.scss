@@ -1,3 +1,12 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+@use 'sass:map';
+
+:host {
+  @include columns;
+  @include full-container;
+  overflow: hidden;
+}
 
 .layout__content {
   background: rgba(110, 109, 109, 0.06);
@@ -9,4 +18,21 @@
   border-style: solid;
   border-width: 0 var(--line-thickness);
   border-color: var(--line-color);
+
+  height: 100vh;
+}
+
+.menu__content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: map.get($menu, z_index);
+  width: 100%;
+}
+
+.page__content {
+  overflow: scroll;
+  overflow-x: hidden;
+  padding-top: $page_padding_top;
+  height: 100vh;
 }

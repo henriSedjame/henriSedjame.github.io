@@ -1,13 +1,10 @@
-<div class="flex flex-col w-full h-full justify-center items-center overflow-hidden">
-
-  <div class="layout__content responsive-width h-screen">
-    <div class="w-full fixed top-0 left-0 z-2">
-      <ng-content select="app-menu"/>
-    </div>
-
-    <div class="overflow-scroll overflow-x-hidden pt-20 h-screen">
-      <ng-content/>
-    </div>
+<div class="layout__content content-width">
+  <div class="menu__content">
+    <ng-content select="app-menu"/>
   </div>
 
+  <div class="page__content">
+    <ng-content/>
+  </div>
 </div>
+

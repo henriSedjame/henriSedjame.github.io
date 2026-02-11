@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 @use 'imports.css';
-
+@use 'globals';
 
 :root {
   --background-color: #000000;
@@ -61,10 +61,6 @@ html, body {
   font-family: 'Anton', sans-serif;
 }
 
-.subtitle {
-  font-weight: 400;
-  font-family: 'Fuggles', cursive, sans-serif;
-}
 
 
 .divider {
@@ -139,9 +135,7 @@ html, body {
 
 /* Tablet */
 @media (min-width: 768px) and (max-width: 1024px) {
-  .responsive-width {
-    width: 100vw;
-  }
+
 
   .hidden-on-tablet {
     display: none;
@@ -154,9 +148,7 @@ html, body {
 
 /* Desktop */
 @media (min-width: 1025px) {
-  .responsive-width {
-    width: 80%;
-  }
+
 
   .hidden-on-desktop {
     display: none;
@@ -164,7 +156,6 @@ html, body {
 
   .description {
     font-size: 1.1rem;
-
   }
 
 }
