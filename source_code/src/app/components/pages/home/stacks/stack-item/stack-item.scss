@@ -44,16 +44,30 @@ $size_on_mobile: calc(100% - 2*$gap_on_mobile);
   @include rows;
   @include icon;
 
-  background-color: var(--light-grey);
+  background-color: var(--light-black);
   grid-column: span 1;
   padding: 8px;
   cursor: pointer;
   filter:  saturate(0);
+  box-shadow: inset 2px 2px 4px 2px rgb(0, 0, 0, 0.5);
 
   &:hover {
     filter: saturate(1);
+    box-shadow: 2px 2px 4px 2px rgb(0, 0, 0, 0.5);
+    border: var(--line-thickness) solid var(--white);
+  }
+
+  &.stack__language:hover{
+    border: var(--line-thickness) solid var(--yellow);
   }
 }
+
+.stack__active {
+  filter: saturate(1);
+  opacity: 1;
+}
+
+
 
 .voile {
   position: absolute;

@@ -50,9 +50,9 @@ This variable is set in the stacks.ts file
 
 :host {
   @include bottom-border;
-
   width: 100%;
-  height: max-content;
+  height: fit-content;
+
 }
 
 .stacks__category__label {
@@ -65,8 +65,7 @@ This variable is set in the stacks.ts file
   color: var(--white);
 }
 .stacks__category__grid {
-  padding: unit(12) unit(4);
-  width: 100%;
+
 
   @include xs {
     grid-template-columns: repeat(var(--cols-number-xs), 1fr);
@@ -93,9 +92,11 @@ This variable is set in the stacks.ts file
     grid-template-rows: repeat(var(--rows-number-xxl), 1fr);
   }
 
-  display: grid;
 
-  gap: unit(3);
+  display: grid;
+  gap: unit(2);
+  padding: unit(12) unit(4);
+  width: 100%;
 }
 
 @include stacks_category_items;

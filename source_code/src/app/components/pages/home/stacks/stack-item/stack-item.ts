@@ -1,4 +1,4 @@
-import {Component, effect, ElementRef, inject, input, output, Renderer2, viewChild} from '@angular/core';
+import {Component, computed, effect, ElementRef, inject, input, output, Renderer2, viewChild} from '@angular/core';
 import {TechStack} from '@App/models';
 import {NgClass, NgOptimizedImage} from '@angular/common';
 import {Translated} from '@App/components';
@@ -15,16 +15,17 @@ import {Translated} from '@App/components';
 })
 export class StackItem {
 
-
   stack = input.required<TechStack>();
 
   active = input.required()
 
-  selectStack = output<TechStack | undefined>()
-
   stack_icon = viewChild<ElementRef<HTMLDivElement>>('stack_icon')
 
   stack_detail = viewChild<ElementRef>('stack_detail')
+
+  isLanguage = computed(() => this.stack().type === 'Language')
+
+  selectStack = output<TechStack | undefined>()
 
   renderer = inject(Renderer2)
 
