@@ -18,6 +18,7 @@ This variable is set in the stacks.ts file
 @mixin stacks_category_items {
   @for $i from 0 through $stack_categories_length {
     .stacks__category__grid__item__#{$i} {
+
       @include xs {
         grid-row: span var(--item-line-#{$i}-xs);
       }
@@ -28,22 +29,6 @@ This variable is set in the stacks.ts file
 
       grid-column: span 1;
 
-      background-color: var(--light-grey);
-      padding-bottom: unit(3);
-
-      &:hover {
-        background-color: var(--light-yellow);
-
-        .stacks__category__label {
-          font-weight: bold;
-          color: var(--black);
-        }
-
-        tech-stack-item {
-          background-color: var(--black);
-          border-radius: unit();
-        }
-      }
     }
   }
 }
@@ -56,14 +41,21 @@ This variable is set in the stacks.ts file
 }
 
 .stacks__category__label {
-  width: 100%;
+
+  width: calc(100% - #{unit(2)});
   text-transform: uppercase;
   padding-left: unit(3);
-  padding-top: unit(2);
-  padding-bottom: unit(2);
+  padding-top: unit(1);
+  padding-bottom: unit();
+  margin-top: unit(2);
+  margin-left: unit(2);
   font-weight: lighter;
   color: var(--white);
+  background-color: var(--light-grey);
+
 }
+
+
 .stacks__category__grid {
 
 
@@ -94,7 +86,7 @@ This variable is set in the stacks.ts file
 
 
   display: grid;
-  gap: unit(2);
+  gap: 0;
   padding: unit(12) unit(4);
   width: 100%;
 }
@@ -103,8 +95,6 @@ This variable is set in the stacks.ts file
 
 .stack__items__grid {
 
-  display: grid;
-
   @include xs {
     grid-template-columns: repeat(var(--stack-cols-number-xs), 1fr);
   }
@@ -112,8 +102,15 @@ This variable is set in the stacks.ts file
   @media(width >= map.get($breakpoints, sm)) {
     grid-template-columns: repeat(var(--stack-cols-number), 1fr);
   }
-  gap: unit(4);
-  padding: 0 unit(4);
+
+  gap: 0;
+  margin-left: unit(2);
+  display: grid;
+  background-color: var(--light-grey);
+
+  &:hover {
+    background-color: var(--light-yellow);
+  }
 
 }
 

@@ -2,18 +2,22 @@
 
 <div #stacks_grid class="stacks__category__grid">
 
+
   @for (categorizedStack of state.stacks(); track $index) {
     <div [ngClass]="'stacks__category__grid__item__' + $index">
 
       <div class="stacks__category__label">
         {{ categorizedStack.category }}
       </div>
+      <div class="stack__items__grid"
+           (mouseenter)="grid_hover(categorizedStack.stacks)"
+           (mouseleave)="grid_leave()">
 
-      <div class="stack__items__grid">
         @for (stack of categorizedStack.stacks; track $index) {
           <tech-stack-item
             [stack]="stack"
             [active]="stack === state.selected_stack()"
+            [hovered]="hovered_tech().includes(stack.name)"
             (selectStack)="selectStack($event)"/>
         }
       </div>

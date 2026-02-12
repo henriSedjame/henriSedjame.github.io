@@ -1,4 +1,4 @@
-import {Component, computed, effect, ElementRef, viewChild} from '@angular/core';
+import {Component, effect, ElementRef, signal, viewChild} from '@angular/core';
 import {STACKS, TechStack} from '@App/models';
 import {patchState, signalState} from '@ngrx/signals';
 import {StackItem} from './stack-item/stack-item';
@@ -36,15 +36,18 @@ export class Stacks {
         ...s,
         lines_number: Math.ceil(s.stacks.length / this.GRID_STACKS_COLUMNS),
         lines_number_xs: Math.ceil(s.stacks.length / this.GRID_STACKS_COLUMNS_XS),
-        index: i})
+        index: i
+      })
     ),
     selected_stack: undefined as TechStack | undefined
   })
 
+  hovered_tech = signal<string[]>([])
+
   _ = effect(() => {
     ifDefined(
       this.stack_grid_view()?.nativeElement?.style,
-      style=> {
+      style => {
 
         this.state.stacks()
           .forEach((stack, i) => {
@@ -52,8 +55,8 @@ export class Stacks {
             style.setProperty(`--item-line-${i}-xs`, stack.lines_number_xs)
           })
 
-        let lines_total =  (cols: number = this.GRID_STACKS_COLUMNS) => this.state.stacks()
-          .reduce((acc, stack) => acc + Math.ceil(stack.stacks.length /  cols) + 1, 0)
+        let lines_total = (cols: number = this.GRID_STACKS_COLUMNS) => this.state.stacks()
+          .reduce((acc, stack) => acc + Math.ceil(stack.stacks.length / cols), 0)
 
         style.setProperty('--stack-cols-number-xs', this.GRID_STACKS_COLUMNS_XS)
         style.setProperty('--stack-cols-number', this.GRID_STACKS_COLUMNS)
@@ -65,17 +68,25 @@ export class Stacks {
         style.setProperty('--cols-number-sm', this.GRID_CATEGORY_COLUMNS_SM)
         style.setProperty('--cols-number-xs', this.GRID_CATEGORY_COLUMNS_XS)
 
-        style.setProperty('--rows-number-xxl', (Math.round(lines_total() / this.GRID_CATEGORY_COLUMNS_XXL)) )
-        style.setProperty('--rows-number-xl', (Math.round(lines_total() / this.GRID_CATEGORY_COLUMNS_XL)) )
-        style.setProperty('--rows-number-lg', (Math.round(lines_total() / this.GRID_CATEGORY_COLUMNS_LG)) )
-        style.setProperty('--rows-number-md', (Math.round(lines_total() / this.GRID_CATEGORY_COLUMNS_MD)) )
-        style.setProperty('--rows-number-sm', (Math.round(lines_total() / this.GRID_CATEGORY_COLUMNS_SM)) )
-        style.setProperty('--rows-number-xs', (Math.round(lines_total() / (this.GRID_CATEGORY_COLUMNS_XS))) )
+        style.setProperty('--rows-number-xxl', (Math.round(lines_total() / this.GRID_CATEGORY_COLUMNS_XXL)))
+        style.setProperty('--rows-number-xl', (Math.round(lines_total() / this.GRID_CATEGORY_COLUMNS_XL)))
+        style.setProperty('--rows-number-lg', (Math.round(lines_total() / this.GRID_CATEGORY_COLUMNS_LG)))
+        style.setProperty('--rows-number-md', (Math.round(lines_total() / this.GRID_CATEGORY_COLUMNS_MD)))
+        style.setProperty('--rows-number-sm', (Math.round(lines_total() / this.GRID_CATEGORY_COLUMNS_SM)))
+        style.setProperty('--rows-number-xs', (Math.round(lines_total() / (this.GRID_CATEGORY_COLUMNS_XS))))
       }
     )
   });
 
   selectStack(stack: TechStack | undefined) {
     patchState(this.state, {selected_stack: stack})
+  }
+
+  grid_hover(stacks: TechStack[]) {
+    this.hovered_tech.set(stacks.map(s => s.name))
+  }
+
+  grid_leave() {
+    this.hovered_tech.set([])
   }
 }

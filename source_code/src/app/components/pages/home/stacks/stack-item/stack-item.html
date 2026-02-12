@@ -1,7 +1,7 @@
 <div
   #stack_icon
   class="stack__icon"
-  [ngClass]="active() ? 'stack__active' : (isLanguage() ? 'stack__language' :  '')"
+  [ngClass]="icon_class()"
   (click)="open()"
 >
   <img

@@ -19,6 +19,8 @@ export class StackItem {
 
   active = input.required()
 
+  hovered = input(false)
+
   stack_icon = viewChild<ElementRef<HTMLDivElement>>('stack_icon')
 
   stack_detail = viewChild<ElementRef>('stack_detail')
@@ -29,6 +31,13 @@ export class StackItem {
 
   renderer = inject(Renderer2)
 
+  icon_class = computed(() => {
+    let c = ''
+    if(this.isLanguage()) {c += 'language' }
+    if(this.hovered()) {c += ' hovered' }
+    if(this.active()) {c += ' active' }
+    return c
+  })
   _ = effect(() => {
     let stackIcon = this.stack_icon()?.nativeElement;
     let stackDetail = this.stack_detail()?.nativeElement;

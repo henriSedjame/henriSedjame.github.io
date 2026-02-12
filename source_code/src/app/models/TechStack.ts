@@ -68,7 +68,7 @@ export const Sass = framework('Sass');
 
 export const Java = language('Java', [Spring, Hibernate, Quarkus, JUnit]);
 export const Kotlin = language('Kotlin', [SpringBoot, Ktor, Vertx]);
-export const Rust = language('Rust', [Rocket, Tokio, Tauri, WebAssembly]);
+export const Rust = language('Rust', [Rocket, Tokio, Tauri,  WebAssembly]);
 export const Rust_ML = language('Rust', [Burn, Polars]);
 export const Go = language('Go', [Fiber, Mux]);
 export const Python = language('Python', [Pandas, ScikitLearn, Keras]);
@@ -121,8 +121,8 @@ export const STACKS : CategorizedTechStack[] = [
   categorizedStack('Machine Learning', [Python, Rust_ML]),
   categorizedStack('Http Protocols', [ Rest, Grpc, Amqp]),
   categorizedStack('messaging queue', [Kafka, Rabbitmq]),
-  categorizedStack('Test & Quality', [Cucumber, Selenium, Sonarqube]),
   categorizedStack('CI/CD & TOOLS', [Gitlab, Github, GithubActions, Docker, Jira, Intellij, Portainer, Jaeger]),
+  categorizedStack('Test & Quality', [Cucumber, Selenium, Sonarqube]),
   categorizedStack('database', [Postgres, MySql, Mongo, Surreal]),
 ]
 

@@ -1,5 +1,6 @@
 @use 'breakpoints' as bp;
 @use 'mixins' as *;
+@use 'functions' as *;
 
 $bloc_height: 750px;
 $bloc_width: 75%;
@@ -47,6 +48,7 @@ $size_on_mobile: calc(100% - 2*$gap_on_mobile);
   background-color: var(--light-black);
   grid-column: span 1;
   padding: 8px;
+  margin: unit(1);
   cursor: pointer;
   filter:  saturate(0);
   box-shadow: inset 2px 2px 4px 2px rgb(0, 0, 0, 0.5);
@@ -54,10 +56,17 @@ $size_on_mobile: calc(100% - 2*$gap_on_mobile);
   &:hover {
     filter: saturate(1);
     box-shadow: 2px 2px 4px 2px rgb(0, 0, 0, 0.5);
-    border: var(--line-thickness) solid var(--white);
   }
 
-  &.stack__language:hover{
+  &.hovered {
+    background-color: var(--black);
+  }
+
+  &.hovered:not(:hover) {
+    box-shadow: inset 2px 2px 4px 2px rgb(0, 0, 0, 0.8);
+  }
+
+  &.language{
     border: var(--line-thickness) solid var(--yellow);
   }
 }
@@ -66,7 +75,6 @@ $size_on_mobile: calc(100% - 2*$gap_on_mobile);
   filter: saturate(1);
   opacity: 1;
 }
-
 
 
 .voile {
