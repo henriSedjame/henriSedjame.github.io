@@ -53,14 +53,3 @@ html, body {
   }
 
 }
-
-.bordered{
-  border: var(--line-thickness) solid var(--line-color);
-}
-
-.glass {
-  background: rgba(16, 16, 16, 0.94);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(150px);
-  -webkit-backdrop-filter: blur(150px);
-}

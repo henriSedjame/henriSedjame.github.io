@@ -1,11 +1,13 @@
 @use 'mixins' as *;
 @use 'breakpoints' as *;
+@use 'functions' as *;
+@use 'variables' as *;
 @use'sass:string';
 @use'sass:list';
 @use 'sass:map';
 @use "sass:selector";
 
-$stack_categories_length: 7;
+
 
 /**
 Build the stacks__category__grid__item css class by item index
@@ -27,7 +29,7 @@ This variable is set in the stacks.ts file
       grid-column: span 1;
 
       background-color: var(--light-grey);
-      padding-bottom: 12px;
+      padding-bottom: unit(3);
 
       &:hover {
         background-color: var(--light-yellow);
@@ -39,7 +41,7 @@ This variable is set in the stacks.ts file
 
         tech-stack-item {
           background-color: var(--black);
-          border-radius: 8px;
+          border-radius: unit();
         }
       }
     }
@@ -56,14 +58,14 @@ This variable is set in the stacks.ts file
 .stacks__category__label {
   width: 100%;
   text-transform: uppercase;
-  padding-left: 12px;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-left: unit(3);
+  padding-top: unit(2);
+  padding-bottom: unit(2);
   font-weight: lighter;
   color: var(--white);
 }
 .stacks__category__grid {
-  padding: 50px 10px;
+  padding: unit(12) unit(4);
   width: 100%;
 
   @include xs {
@@ -93,7 +95,7 @@ This variable is set in the stacks.ts file
 
   display: grid;
 
-  gap: 10px;
+  gap: unit(3);
 }
 
 @include stacks_category_items;
@@ -109,8 +111,8 @@ This variable is set in the stacks.ts file
   @media(width >= map.get($breakpoints, sm)) {
     grid-template-columns: repeat(var(--stack-cols-number), 1fr);
   }
-  gap: 16px;
-  padding: 0 16px;
+  gap: unit(4);
+  padding: 0 unit(4);
 
 }
 

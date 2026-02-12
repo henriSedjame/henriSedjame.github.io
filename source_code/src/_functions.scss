@@ -1,0 +1,5 @@
+@use 'variables' as *;
+
+@function unit($nb : 1) {
+  @return calc(#{$nb} * $size_unit);
+}

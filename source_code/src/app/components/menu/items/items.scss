@@ -16,8 +16,28 @@
 }
 
 .label {
-  font-size: .8rem;
-  font-weight: 400;
+
+  @include mobile {
+    font-size: 1.2rem;
+    font-weight: 200;
+    &.active {
+      color: var(--white);
+      font-weight: 400;
+      opacity: 1;
+    }
+  }
+
+  @include not-mobile {
+    font-size: .8rem;
+    font-weight: 400;
+    &.active {
+      color: var(--white);
+      font-weight: 600;
+      opacity: 1;
+    }
+  }
+
+
   text-transform: uppercase;
   cursor: pointer;
   opacity: .7;
@@ -31,11 +51,6 @@
     opacity: .9;
   }
 
-  &.active {
-    color: var(--white);
-    font-weight: 600;
-    opacity: 1;
-  }
 }
 
 .item-hover {

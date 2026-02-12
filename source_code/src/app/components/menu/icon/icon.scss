@@ -37,18 +37,21 @@
 
 .menu-box {
   @include glass-effect;
+  @include columns(center, space-between);
 
   position: absolute;
-  top: 68px;
+  top: 65px;
   right: 0;
   width: 100%;
   z-index: 2;
   padding-top: 16px;
+  height: calc(100vh - (65px));
 
 }
 
 .lang-selector-container {
   @include rows(center, end);
+  width: 100%;
   margin-top: 24px;
   padding: 0;
   background-color: var(--black);
