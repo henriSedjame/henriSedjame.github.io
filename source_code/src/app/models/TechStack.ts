@@ -1,8 +1,10 @@
+import {Option, orElse} from '@hsedjame/optionjs';
 
 export type StackType = 'Language' | 'Framework' | 'Tools';
 
 export type TechStack = {
   name: string;
+  label: string;
   type: StackType;
   logo: string;
   linked_stacks: TechStack[];
@@ -13,30 +15,33 @@ export type CategorizedTechStack = {
   stacks: TechStack[];
 }
 
-export const framework = (name: string, extension: string = 'svg') : TechStack => ({
+export const framework = (name: string, label: Option<string> = undefined, extension: string = 'svg') : TechStack => ({
   name : name.toLowerCase(),
+  label: orElse(label, () => name),
   logo: `tech-icons/${name.toLowerCase()}.${extension}`,
   linked_stacks: [],
   type: 'Framework'
 })
 
 
-export const language = (name: string, linked_stacks: TechStack[] = [], extension: string = 'svg',) : TechStack => ({
+export const language = (name: string,  linked_stacks: TechStack[] = [], label: Option<string> = undefined, extension: string = 'svg',) : TechStack => ({
   name : name.toLowerCase(),
+  label: orElse(label, () => name),
   logo: `tech-icons/${name.toLowerCase()}.${extension}`,
   linked_stacks: linked_stacks,
   type: 'Language'
 })
 
-export const tool = (name: string, extension: string = 'svg') : TechStack => ({
+export const tool = (name: string, label: Option<string> = undefined, extension: string = 'svg') : TechStack => ({
   name : name.toLowerCase(),
+  label: orElse(label, () => name),
   logo: `tech-icons/${name.toLowerCase()}.${extension}`,
   linked_stacks: [],
   type: 'Tools'
 })
 
 export const Spring = framework('Spring');
-export const SpringBoot = framework('SpringBoot');
+export const SpringBoot = framework('SpringBoot', 'Spring Boot');
 export const Hibernate = framework('Hibernate');
 export const Quarkus = framework('Quarkus');
 export const JUnit = framework('JUnit');
@@ -45,7 +50,7 @@ export const Rocket = framework('Rocket');
 export const Tokio = framework('Tokio');
 export const Tauri = framework('Tauri');
 export const Fiber = framework('Fiber');
-export const Mux = framework('Mux', 'png');
+export const Mux = framework('Mux', 'Gorilla Mux','png');
 export const Vertx = framework('Vertx');
 export const WebAssembly = framework('WebAssembly');
 
@@ -70,28 +75,28 @@ export const Java = language('Java', [Spring, Hibernate, Quarkus, JUnit]);
 export const Kotlin = language('Kotlin', [SpringBoot, Ktor, Vertx]);
 export const Rust = language('Rust', [Rocket, Tokio, Tauri,  WebAssembly]);
 export const Rust_ML = language('Rust', [Burn, Polars]);
-export const Go = language('Go', [Fiber, Mux]);
+export const Go = language('Go', [Fiber, Mux], 'Golang');
 export const Python = language('Python', [Pandas, ScikitLearn, Keras]);
 
 export const Typescript = language('Typescript', [Angular, React, SolidJs]);
 export const JavaScript = language('JavaScript', [ElysiaJs]);
 export const Elm = language('Elm');
-export const Htmx = language('Htmx');
-export const Html = language('Html');
-export const Css = language('Css', [TailwindCss, Sass]);
+export const Htmx = language('HTMX', );
+export const Html = language('HTML');
+export const Css = language('CSS', [TailwindCss, Sass]);
 export const Dart = language('Dart', [Flutter]);
 
-export const Postgres = tool('Postgres' );
+export const Postgres = tool('Postgres', 'PostgreSQL');
 export const MySql = tool('MySql' );
-export const Mongo = tool('Mongo' );
-export const Surreal = tool('SurrealDB','png');
+export const Mongo = tool('Mongo', 'MongoDB' );
+export const Surreal = tool('SurrealDB', undefined,'png');
 
 export const Kafka = tool('Kafka');
-export const Rabbitmq = tool('Rabbitmq');
+export const Rabbitmq = tool('RabbitMQ');
 
 export const Gitlab = tool('Gitlab');
 export const Github = tool('Github');
-export const GithubActions = tool('GithubActions');
+export const GithubActions = tool('GithubActions', 'GitHub Actions');
 export const Docker = tool('Docker');
 export const Jira = tool('Jira');
 export const Intellij = tool('Intellij');
@@ -100,11 +105,11 @@ export const Jaeger = tool('Jaeger');
 
 export const Cucumber = tool('Cucumber');
 export const Selenium = tool('Selenium');
-export const Sonarqube = tool('Sonarqube');
+export const Sonarqube = tool('SonarQube');
 
-export const Rest = tool('Rest', 'webp');
-export const Grpc = tool('Grpc');
-export const Amqp = tool('AMQP', 'png');
+export const Rest = tool('REST', undefined, 'webp');
+export const Grpc = tool('gRPC');
+export const Amqp = tool('AMQP', undefined,'png');
 
 
 const explodeStack = (stack: TechStack) : TechStack[] => {

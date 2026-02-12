@@ -41,6 +41,35 @@ $size_on_mobile: calc(100% - 2*$gap_on_mobile);
   border-radius: 4px;
 }
 
+
+:host:hover{
+  .tooltip {
+    display: block;
+
+  }
+}
+
+.tooltip {
+  @include full-border;
+
+  position: absolute;
+  z-index: 3;
+  top: unit(-6.8);
+  width: max-content;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: unit() unit(2.5) ;
+  text-align: center;
+  background-color: var(--black);
+  color: var(--white);
+  border-radius: unit();
+  font-size: .7rem;
+  display: none;
+  max-lines: 1;
+  box-shadow: 2px 0 4px 4px rgb(0, 0, 0, 0.5);
+
+}
+
 .stack__icon {
   @include rows;
   @include icon;
@@ -54,6 +83,7 @@ $size_on_mobile: calc(100% - 2*$gap_on_mobile);
   box-shadow: inset 2px 2px 4px 2px rgb(0, 0, 0, 0.5);
 
   &:hover {
+    position: relative;
     filter: saturate(1);
     box-shadow: 2px 2px 4px 2px rgb(0, 0, 0, 0.5);
   }
@@ -75,7 +105,6 @@ $size_on_mobile: calc(100% - 2*$gap_on_mobile);
   filter: saturate(1);
   opacity: 1;
 }
-
 
 .voile {
   position: absolute;
@@ -116,6 +145,7 @@ $size_on_mobile: calc(100% - 2*$gap_on_mobile);
     opacity: 100%;
   }
 }
+
 .opened {
 
   @include detail_bloc(
@@ -320,3 +350,4 @@ $size_on_mobile: calc(100% - 2*$gap_on_mobile);
     scale: 1;
   }
 }
+
