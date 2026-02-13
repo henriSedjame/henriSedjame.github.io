@@ -1,5 +1,5 @@
 @use 'mixins' as *;
-
+@use 'functions' as *;
 .icon {
   @include columns(end, end);
   width: 100%;
@@ -13,8 +13,8 @@
   color: var(--white);
 
   &.close {
-    font-size: .44rem;
-    margin-top: 3px;
+    font-size: .42rem;
+    margin-top: unit(1/4);
     color: var(--white);
   }
 }
@@ -38,14 +38,15 @@
 .menu-box {
   @include glass-effect;
   @include columns(center, space-between);
+  @include full-border;
 
   position: absolute;
-  top: 65px;
+  top: unit(16.5);
   right: 0;
   width: 100%;
   z-index: 2;
-  padding-top: 16px;
-  height: calc(100vh - (65px));
+  padding-top: unit(4);
+  height: calc(100vh - #{unit(16.5)});
 
 }
 

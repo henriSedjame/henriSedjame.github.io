@@ -26,6 +26,18 @@
   }
 }
 
+.divider {
+  width: 100%;
+  height: var(--line-thickness);
+  background-color: var(--line-color);
+}
+
+.vertical-divider {
+  width: var(--line-thickness);
+  height: fit-content;
+  background-color: var(--line-color);
+}
+
 .bordered{
   border: var(--line-thickness) solid var(--line-color);
 }
