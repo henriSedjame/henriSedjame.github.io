@@ -7,7 +7,7 @@
   <img
     [ngSrc]="stack().logo" width="40" height="40" [alt]="stack().name + ' icon'"/>
 
-  <div class="tooltip">{{stack().label}}</div>
+  <div class="tooltip" [ngClass]="isLanguage() ? 'tooltip_language' : ''">{{stack().label}}</div>
 </div>
 
 @if (active()) {

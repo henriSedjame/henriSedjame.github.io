@@ -124,10 +124,10 @@ export const STACKS : CategorizedTechStack[] = [
   categorizedStack('backend', [Java, Kotlin, Rust, Go]),
   categorizedStack('frontend', [Html, Css, Typescript, JavaScript, Elm , Htmx, Dart]),
   categorizedStack('Machine Learning', [Python, Rust_ML]),
+  categorizedStack('database', [Postgres, MySql, Mongo, Surreal]),
+  categorizedStack('CI/CD & TOOLS', [Gitlab, Github, GithubActions, Docker, Jira, Intellij, Portainer, Jaeger]),
   categorizedStack('Http Protocols', [ Rest, Grpc, Amqp]),
   categorizedStack('messaging queue', [Kafka, Rabbitmq]),
-  categorizedStack('CI/CD & TOOLS', [Gitlab, Github, GithubActions, Docker, Jira, Intellij, Portainer, Jaeger]),
   categorizedStack('Test & Quality', [Cucumber, Selenium, Sonarqube]),
-  categorizedStack('database', [Postgres, MySql, Mongo, Surreal]),
 ]
 

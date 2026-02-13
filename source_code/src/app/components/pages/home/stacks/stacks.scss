@@ -45,19 +45,18 @@ This variable is set in the stacks.ts file
   width: calc(100% - #{unit(2)});
   text-transform: uppercase;
   padding-left: unit(3);
-  padding-top: unit(1);
+  padding-top: unit();
   padding-bottom: unit();
-  margin-top: unit(2);
   margin-left: unit(2);
+  margin-top: unit(.5);
   font-weight: lighter;
+  font-size: .8rem;
   color: var(--white);
   background-color: var(--light-grey);
-
 }
 
 
 .stacks__category__grid {
-
 
   @include xs {
     grid-template-columns: repeat(var(--cols-number-xs), 1fr);

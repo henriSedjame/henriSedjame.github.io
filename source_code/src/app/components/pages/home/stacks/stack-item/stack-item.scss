@@ -45,28 +45,35 @@ $size_on_mobile: calc(100% - 2*$gap_on_mobile);
 :host:hover{
   .tooltip {
     display: block;
-
   }
+  z-index: 1;
 }
 
 .tooltip {
   @include full-border;
 
   position: absolute;
-  z-index: 3;
-  top: unit(-6.8);
+  z-index: 2;
+  bottom: unit(-7.2);
+  min-width: 100%;
   width: max-content;
   left: 50%;
   transform: translateX(-50%);
   padding: unit() unit(2.5) ;
   text-align: center;
-  background-color: var(--black);
-  color: var(--white);
+  background-color: var(--white);
+  color: var(--black);
   border-radius: unit();
   font-size: .7rem;
+  font-weight: 400;
   display: none;
   max-lines: 1;
-  box-shadow: 2px 0 4px 4px rgb(0, 0, 0, 0.5);
+  box-shadow: 1px 1px 2px 1px rgba(0,0,0, 0.5);
+
+  &.tooltip_language {
+    background-color: var(--yellow);
+    color: var(--black);
+  }
 
 }
 
@@ -76,7 +83,7 @@ $size_on_mobile: calc(100% - 2*$gap_on_mobile);
 
   background-color: var(--light-black);
   grid-column: span 1;
-  padding: 8px;
+  padding: unit(2);
   margin: unit(1);
   cursor: pointer;
   filter:  saturate(0);
@@ -86,6 +93,7 @@ $size_on_mobile: calc(100% - 2*$gap_on_mobile);
     position: relative;
     filter: saturate(1);
     box-shadow: 2px 2px 4px 2px rgb(0, 0, 0, 0.5);
+    border: var(--line-thickness) solid var(--white);
   }
 
   &.hovered {
@@ -93,10 +101,10 @@ $size_on_mobile: calc(100% - 2*$gap_on_mobile);
   }
 
   &.hovered:not(:hover) {
-    box-shadow: inset 2px 2px 4px 2px rgb(0, 0, 0, 0.8);
+    box-shadow: inset 2px 2px 4px 2px rgb(0, 0, 0);
   }
 
-  &.language{
+  &.language:hover{
     border: var(--line-thickness) solid var(--yellow);
   }
 }
