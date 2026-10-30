@@ -42,3 +42,23 @@ localize:
 
 lint_fix:
 	npm run lint:fix
+
+# --- Outillage kanban (voir ../README.md § Outillage kanban) -------------------
+# Clôture d'une carte sur commit + nettoyage worktree/session au passage en done.
+# Le code vit à la racine du dépôt : ../.githooks/post-commit et ../scripts/kanban_card.py.
+# Depuis un worktree, REPO_ROOT est le worktree : le script résout lui-même la
+# racine principale pour les cibles installées (hook, copie, wrapper du cron), et
+# `install` prévient qu'il faut relancer depuis le checkout principal après merge.
+REPO_ROOT := $(abspath $(CURDIR)/..)
+
+kanban-hooks-install:
+	python3 $(REPO_ROOT)/scripts/kanban_card.py install --repo $(REPO_ROOT)
+
+kanban-hooks-status:
+	python3 $(REPO_ROOT)/scripts/kanban_card.py status --repo $(REPO_ROOT)
+
+kanban-cleanup-run:
+	python3 $(REPO_ROOT)/scripts/kanban_card.py sweep --repo $(REPO_ROOT)
+
+.PHONY: kanban-hooks-install kanban-hooks-status kanban-cleanup-run
+

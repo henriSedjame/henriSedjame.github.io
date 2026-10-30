@@ -42,3 +42,12 @@ __screenshots__/
 # System files
 .DS_Store
 Thumbs.db
+
+# Git worktrees (worktree_create / git worktree add)
+.worktrees/
+
+# Métadonnées du worktree Hermes (chemins absolus, profil) — jamais versionné
+.hermes-worktree.json
+
+# Python (outillage kanban)
+__pycache__/

@@ -1,0 +1,65 @@
+#!/bin/sh
+# Clôture sur commit — voir README.md § Outillage kanban.
+#
+# Un commit sur la branche d'une carte du board kanban `portfolio` clôt cette
+# carte (le sha part dans `result`). Le hook ne bloque jamais un commit, ne
+# commite pas, ne pousse pas et n'écrit aucun fichier du dépôt : il lit git,
+# appelle `hermes kanban complete`, et sort toujours en 0.
+#
+# Installation : make kanban-hooks-install  (copie ce fichier dans
+#   <profil>/kanban-hooks/ et pose `core.hooksPath` sur ce dossier ABSOLU, commun
+#   à tous les worktrees; le script est cherché d'abord dans la racine principale)
+# Vérification : make kanban-hooks-status
+# Limite connue : si un worker est encore vivant sur la carte, la clôture est
+# refusée par le noyau (`LiveClaimError`) ; le hook commente la carte au lieu de
+# forcer, et la clôture reste manuelle.
+set -u
+
+# Un hook ne doit jamais faire échouer un commit.
+trap 'exit 0' EXIT
+
+repo_root=$(git rev-parse --show-toplevel 2>/dev/null) || exit 0
+common=$(git rev-parse --git-common-dir 2>/dev/null) || exit 0
+case "$common" in
+  /*) ;;
+  *) common="$repo_root/$common" ;;
+esac
+main_root=$(cd "$common/.." 2>/dev/null && pwd) || exit 0
+
+# Le script est résolu depuis la racine principale (jamais depuis le worktree
+# commité, qui peut disparaître), avec repli sur la copie installée dans le profil.
+script=""
+if [ -n "${KANBAN_CARD_SCRIPT:-}" ] && [ -f "$KANBAN_CARD_SCRIPT" ]; then
+  script=$KANBAN_CARD_SCRIPT
+elif [ -f "$main_root/scripts/kanban_card.py" ]; then
+  script="$main_root/scripts/kanban_card.py"
+else
+  for candidate in "$HOME"/.hermes/profiles/*/scripts/kanban_card.py; do
+    if [ -f "$candidate" ]; then
+      script=$candidate
+      break
+    fi
+  done
+fi
+
+if [ -z "$script" ]; then
+  echo "kanban: scripts/kanban_card.py introuvable (ni $main_root ni profil) — clôture sur commit inactive" >&2
+  exit 0
+fi
+
+python=${KANBAN_CARD_PYTHON:-}
+if [ -z "$python" ]; then
+  for candidate in python3 /opt/homebrew/bin/python3 /usr/bin/python3; do
+    if command -v "$candidate" >/dev/null 2>&1; then
+      python=$candidate
+      break
+    fi
+  done
+fi
+if [ -z "$python" ]; then
+  echo "kanban: python3 introuvable — clôture sur commit inactive" >&2
+  exit 0
+fi
+
+"$python" "$script" close-on-commit --repo "$repo_root" || true
+exit 0
